@@ -1,0 +1,587 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Menu - Stackly Fine Dining</title>
+  <meta name="description"
+    content="The Stackly menu: a ten-course tasting menu, Indian and European plates, desserts and a 600-label cellar.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Manrope:wght@300;400;500;600&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/lenis@1.1.13/dist/lenis.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+  <link rel="stylesheet" href="assets/css/style.css">
+  <link rel="stylesheet" href="assets/css/menu.css">
+</head>
+
+<body>
+<div id="preloader" role="status" aria-live="polite" aria-label="Loading">
+  <div class="pre-inner">
+    <img class="pre-logo" src="assets/images/logo.webp" alt="Stackly" width="172" height="50">
+    <span class="pre-bar" aria-hidden="true"><i></i></span>
+    <span class="pre-text">Setting the table</span>
+  </div>
+</div>
+
+  <header class="nav" id="nav">
+    <div class="topbar">
+      <span>Salem, Tamil Nadu, India.</span>
+      <span>Tuesday - Sunday, 6:30 - 11 pm</span>
+      <a href="404.html">+91 9876543210</a>
+    </div>
+    <div class="bar">
+      <a href="index.html" class="logo"><img src="assets/images/logo.webp" alt="Stackly"></a>
+      <nav id="menu" aria-label="Main">
+        <a href="index.html">Home</a>
+        <a href="about.html">About Us</a>
+        <a href="menu.html">Menu</a>
+        <a href="blog.html">Blog</a>
+        <a href="contact.html">Contact</a>
+        <a href="login.html" class="btn btn-sm menu-cta"><i class="fa-solid fa-user" aria-hidden="true"></i> Login</a>
+      </nav>
+      <a href="login.html" class="btn btn-sm bar-cta"><i class="fa-solid fa-user" aria-hidden="true"></i> Login</a>
+      <button class="burger" id="burger" aria-label="Open menu"
+        aria-expanded="false"><span></span><span></span></button>
+    </div>
+  </header>
+
+
+  <main id="top">
+    <!-- Sub-header bar: sits directly below the fixed nav -->
+    <div class="m-subheader" role="navigation" aria-label="Page location">
+      <nav class="crumbs" aria-label="Breadcrumb"><a href="index.html">Home</a><span>/</span><span
+          aria-current="page">Menu</span></nav>
+      <p class="m-kicker">Kitchen &amp; cellar</p>
+    </div>
+
+    <!-- 1 HERO: editorial split — copy left, arched photo + menu card right, fact bar below -->
+    <section class="m-hero">
+      <div class="m-hero-grid">
+        <div class="m-hero-text">
+          <h1 aria-label="The menu, written this morning.">
+            <span class="line"><span>The menu,</span></span>
+            <span class="line"><span><em>written</em></span></span>
+            <span class="line"><span>this morning.</span></span>
+          </h1>
+          <p class="lead">Our growers send word at dawn and the kitchen writes the evening around it. Here is what you
+            will find at the table this week.</p>
+          <div class="hero-cta"><a href="login.html" class="btn"><i class="fa-solid fa-calendar-check" aria-hidden="true"></i> Reserve a table</a><a href="404.html" class="link">See
+              the tasting menu</a></div>
+        </div>
+
+        <div class="m-hero-visual">
+          <span class="m-edge" aria-hidden="true">Salem · Est. 2016</span>
+          <figure class="m-hero-frame">
+            <img class="m-hero-bg"
+              src="assets/images/hero-evening-dining.webp"
+              alt="A dinner table laid with plates and wine" fetchpriority="high">
+          </figure>
+        </div>
+      </div>
+
+      <ul class="facts">
+        <li><i class="fa-solid fa-utensils" aria-hidden="true"></i><span>Ten courses, ₹9,500 per guest</span></li>
+        <li><i class="fa-regular fa-clock" aria-hidden="true"></i><span>Tuesday – Sunday, 6:30 – 11 pm</span></li>
+        <li><i class="fa-regular fa-pen-to-square" aria-hidden="true"></i><span>Written fresh each morning</span></li>
+      </ul>
+    </section>
+
+    <!-- STICKY MENU NAV -->
+    <div class="menu-bar" id="menuBar">
+      <div class="wrap bar-in">
+        <nav class="cats" id="cats" aria-label="Menu sections">
+          <a href="#tasting">Tasting menu</a><a href="#indian">Indian kitchen</a><a href="#european">European
+            kitchen</a><a href="#sweet">Desserts</a><a href="#drinks">Wine and drinks</a><a href="#notes">Good to
+            know</a>
+        </nav>
+        <div class="diets" role="group" aria-label="Highlight dishes by diet">
+          <a href="404.html" data-filter="all" aria-pressed="true"><i class="fa-solid fa-utensils" aria-hidden="true"></i> All</a><a href="404.html" data-filter="veg"
+            aria-pressed="false"><i class="fa-solid fa-seedling" aria-hidden="true"></i> Vegetarian</a><a href="404.html" data-filter="vegan"
+            aria-pressed="false"><i class="fa-solid fa-leaf" aria-hidden="true"></i> Vegan</a><a href="404.html" data-filter="gf"
+            aria-pressed="false"><i class="fa-solid fa-wheat-awn-circle-exclamation" aria-hidden="true"></i> Gluten-free</a>
+        </div>
+      </div>
+    </div>
+    <div class="diet-strip">
+      <div class="wrap diets" role="group" aria-label="Highlight dishes by diet">
+        <a href="404.html" data-filter="all" aria-pressed="true"><i class="fa-solid fa-utensils" aria-hidden="true"></i> All</a><a href="404.html" data-filter="veg"
+          aria-pressed="false"><i class="fa-solid fa-seedling" aria-hidden="true"></i> Vegetarian</a><a href="404.html" data-filter="vegan"
+          aria-pressed="false"><i class="fa-solid fa-leaf" aria-hidden="true"></i> Vegan</a><a href="404.html" data-filter="gf"
+          aria-pressed="false"><i class="fa-solid fa-wheat-awn-circle-exclamation" aria-hidden="true"></i> Gluten-free</a>
+      </div>
+    </div>
+    <p class="sr" id="filterNote" role="status"></p>
+
+    <!-- 2 TASTING -->
+    <section class="section tasting-sec" id="tasting">
+      <div class="wrap t-grid">
+        <div class="t-side" data-aos="fade-up">
+          <h2>The ten-course tasting menu</h2>
+          <p>Served in order, over about three hours. The whole table takes the same menu.</p>
+          <p class="t-price"><b>₹9,500</b> per guest<br><b>₹5,500</b> with wine pairing</p>
+          <a href="login.html" class="btn"><i class="fa-solid fa-utensils" aria-hidden="true"></i> Book the tasting</a>
+          <span class="t-now" aria-hidden="true"><span class="t-now-row"><b class="t-now-n" id="tNow">01</b><span class="t-now-of">/ 10</span></span><span class="t-now-bar"></span></span>
+        </div>
+        <ol class="courses-list" id="courseList">
+          <li class="course"><span class="n">I</span>
+            <div>
+              <h3>Oyster, cucumber, dill oil</h3>
+              <p>A cold, bright first bite.</p>
+            </div>
+          </li>
+          <li class="course"><span class="n">II</span>
+            <div>
+              <h3>Heirloom tomato broth</h3>
+              <p>Clarified overnight, served warm.</p>
+            </div>
+          </li>
+          <li class="course"><span class="n">III</span>
+            <div>
+              <h3>Scallop, yuzu, brown butter</h3>
+              <p>Seared on one side only.</p>
+            </div>
+          </li>
+          <li class="course"><span class="n">IV</span>
+            <div>
+              <h3>Hand-rolled dumplings</h3>
+              <p>Aged parmesan, black garlic.</p>
+            </div>
+          </li>
+          <li class="course"><span class="n">V</span>
+            <div>
+              <h3>Line-caught pomfret</h3>
+              <p>Lemon butter sauce, sea herbs.</p>
+            </div>
+          </li>
+          <li class="course"><span class="n">VI</span>
+            <div>
+              <h3>Pan-seared sea bass</h3>
+              <p>Curry-leaf butter, smoked beet.</p>
+            </div>
+          </li>
+          <li class="course"><span class="n">VII</span>
+            <div>
+              <h3>Aged cheese, honeycomb</h3>
+              <p>From a farm 40 km away.</p>
+            </div>
+          </li>
+          <li class="course"><span class="n">VIII</span>
+            <div>
+              <h3>Sorbet of green apple</h3>
+              <p>A pause before sweetness.</p>
+            </div>
+          </li>
+          <li class="course"><span class="n">IX</span>
+            <div>
+              <h3>Dark chocolate sphere</h3>
+              <p>Poured table-side.</p>
+            </div>
+          </li>
+          <li class="course"><span class="n">X</span>
+            <div>
+              <h3>Small sweets</h3>
+              <p>With tea or an espresso.</p>
+            </div>
+          </li>
+        </ol>
+      </div>
+    </section>
+
+    <!-- 3 INDIAN -->
+    <section class="section light" id="indian">
+      <div class="wrap">
+        <h2 data-aos="fade-up">From the Indian kitchen</h2>
+        <ul class="list">
+          <li class="row-li">
+            <article class="dish entry" data-diet="gf">
+              <div class="d-top">
+                <h3>Hyderabadi dum biryani</h3><i class="ll"></i><span class="price">₹1,450</span>
+              </div>
+              <p>Saffron basmati, slow-cooked lamb, burani raita</p>
+            </article>
+          </li>
+          <li class="row-li">
+            <article class="dish entry" data-diet="gf">
+              <div class="d-top">
+                <h3>Chettinad pepper chicken</h3><i class="ll"></i><span class="price">₹1,150</span>
+              </div>
+              <p>Black pepper, curry leaf, kalpasi</p>
+            </article>
+          </li>
+          <li class="row-li">
+            <article class="dish entry" data-diet="gf">
+              <div class="d-top">
+                <h3>Tandoori lamb chops</h3><i class="ll"></i><span class="price">₹1,650</span>
+              </div>
+              <p>Kashmiri chilli, mint chutney, pickled onion</p>
+            </article>
+          </li>
+          <li class="row-li">
+            <article class="dish entry" data-diet="">
+              <div class="d-top">
+                <h3>Malabar prawn moilee</h3><i class="ll"></i><span class="price">₹1,750</span>
+              </div>
+              <p>Coconut milk, green chilli, curry leaf, appam</p>
+            </article>
+          </li>
+          <li class="row-li">
+            <article class="dish entry" data-diet="veg gf">
+              <div class="d-top">
+                <h3>Smoked paneer makhani</h3><i class="ll"></i><span class="price">₹950</span>
+              </div>
+              <p>Tomato-fenugreek gravy, cashew cream</p>
+            </article>
+          </li>
+          <li class="row-li">
+            <article class="dish entry" data-diet="veg vegan gf">
+              <div class="d-top">
+                <h3>Kolli Hills jackfruit curry</h3><i class="ll"></i><span class="price">₹850</span>
+              </div>
+              <p>Raw jackfruit, roasted coconut, millet crisp</p>
+            </article>
+          </li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- 4 EUROPEAN -->
+    <section class="section euro" id="european">
+      <div class="euro-header wrap" data-aos="fade-up">
+        <div class="euro-header-left">
+          <span class="euro-kicker"><span class="euro-kicker-line"></span>European Kitchen</span>
+          <h2>From the<br><em>continent's table</em></h2>
+        </div>
+        <p class="euro-header-desc">Sourced from small producers across Burgundy, Piedmont and coastal Brittany &mdash;
+          composed daily by our chef de partie.</p>
+      </div>
+
+      <ul class="euro-list">
+
+        <li class="euro-row dish" data-diet="gf" data-aos="fade-up">
+          <div class="euro-row-img">
+            <figure>
+              <img src="assets/images/scallop-dish.webp"
+                alt="Hand-dived scallop" loading="lazy">
+              <div class="euro-img-tag">Seafood</div>
+            </figure>
+          </div>
+          <div class="euro-row-body">
+            <span class="euro-idx" aria-hidden="true">01</span>
+            <div class="euro-row-text">
+              <h3>Hand-dived scallop</h3>
+              <p>Pan-seared in hot copper, emulsified brown butter, Japanese yuzu zest, slow-roasted celeriac
+                puree.</p>
+              <div class="euro-row-foot">
+                <span class="euro-price">&#8377;1,850</span>
+                <span class="euro-dot" aria-hidden="true">&middot;</span>
+                <span class="euro-attrib">Brittany Coast</span>
+              </div>
+            </div>
+          </div>
+        </li>
+
+        <li class="euro-row euro-row--rev dish" data-diet="gf" data-aos="fade-up">
+          <div class="euro-row-img">
+            <figure>
+              <img src="assets/images/sea-bass.webp"
+                alt="Pan-seared sea bass" loading="lazy">
+              <div class="euro-img-tag">Fish</div>
+            </figure>
+          </div>
+          <div class="euro-row-body">
+            <span class="euro-idx" aria-hidden="true">02</span>
+            <div class="euro-row-text">
+              <h3>Pan-seared sea bass</h3>
+              <p>Line-caught sea bass fillet, curry-leaf butter, ember-roasted beet, charred thyme
+                and a light coconut sauce.</p>
+              <div class="euro-row-foot">
+                <span class="euro-price">&#8377;2,450</span>
+                <span class="euro-dot" aria-hidden="true">&middot;</span>
+                <span class="euro-attrib">Kerala Coast</span>
+              </div>
+            </div>
+          </div>
+        </li>
+
+        <li class="euro-row dish" data-diet="veg" data-aos="fade-up">
+          <div class="euro-row-img">
+            <figure>
+              <img src="assets/images/hand-finished-dish.webp"
+                alt="Wild mushroom royale" loading="lazy">
+              <div class="euro-img-tag">Plant-based</div>
+            </figure>
+          </div>
+          <div class="euro-row-body">
+            <span class="euro-idx" aria-hidden="true">03</span>
+            <div class="euro-row-text">
+              <h3>Wild mushroom royale</h3>
+              <p>Silky truffle egg custard, forest-foraged chanterelles, crisp toasted rye, and fresh garden chervil
+                oil.</p>
+              <div class="euro-row-foot">
+                <span class="euro-price">&#8377;1,350</span>
+                <span class="euro-dot" aria-hidden="true">&middot;</span>
+                <span class="euro-attrib">Dordogne, France</span>
+              </div>
+            </div>
+          </div>
+        </li>
+
+        <li class="euro-row euro-row--rev dish" data-diet="veg vegan gf" data-aos="fade-up">
+          <div class="euro-row-img">
+            <figure>
+              <img src="assets/images/paneer-makhani.webp"
+                alt="Smoked beetroot salad" loading="lazy">
+              <div class="euro-img-tag">Vegan</div>
+            </figure>
+          </div>
+          <div class="euro-row-body">
+            <span class="euro-idx" aria-hidden="true">04</span>
+            <div class="euro-row-text">
+              <h3>Smoked beetroot salad</h3>
+              <p>Estate golden and candy-striped beet, smoked cashew cream, house capers, preserved pickled shallot, rye
+                cracker.</p>
+              <div class="euro-row-foot">
+                <span class="euro-price">&#8377;1,050</span>
+                <span class="euro-dot" aria-hidden="true">&middot;</span>
+                <span class="euro-attrib">Estate Garden</span>
+              </div>
+            </div>
+          </div>
+        </li>
+
+      </ul>
+    </section>
+
+    <!-- 5 SWEET -->
+    <section class="section sweet" id="sweet">
+      <div class="wrap">
+        <h2 data-aos="fade-up">To finish</h2>
+        <ul class="plates">
+          <li data-aos="zoom-in" data-aos-delay="0">
+            <article class="dish plate" data-diet="veg">
+              <figure><img
+                  src="assets/images/image-6.webp"
+                  alt="Dark chocolate sphere" loading="lazy"></figure>
+              <h3>Dark chocolate sphere</h3>
+              <p>Warm salted caramel, hazelnut</p><span class="price">₹950</span>
+            </article>
+          </li>
+          <li data-aos="zoom-in" data-aos-delay="100">
+            <article class="dish plate" data-diet="veg gf">
+              <figure><img
+                  src="assets/images/image-1.webp"
+                  alt="Mango and saffron kulfi" loading="lazy"></figure>
+              <h3>Mango and saffron kulfi</h3>
+              <p>Pistachio, cardamom crumb</p><span class="price">₹850</span>
+            </article>
+          </li>
+          <li data-aos="zoom-in" data-aos-delay="200">
+            <article class="dish plate" data-diet="veg gf">
+              <figure><img
+                  src="assets/images/image-9.webp"
+                  alt="Filter coffee caramel custard" loading="lazy"></figure>
+              <h3>Filter coffee caramel custard</h3>
+              <p>Jaggery, Yercaud coffee</p><span class="price">₹850</span>
+            </article>
+          </li>
+          <li data-aos="zoom-in" data-aos-delay="300">
+            <article class="dish plate" data-diet="veg vegan gf">
+              <figure><img
+                  src="assets/images/image.webp"
+                  alt="Green apple sorbet" loading="lazy"></figure>
+              <h3>Green apple sorbet</h3>
+              <p>Lime, mint, black salt</p><span class="price">₹750</span>
+            </article>
+          </li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- 6 DRINKS -->
+    <section class="section light drinks" id="drinks">
+      <div class="wrap">
+        <div class="drinks-head" data-aos="fade-up">
+          <h2>Wine and drinks</h2>
+          <p>Our wine director, Arjun Menon, keeps 600 labels. Choose a pairing for the tasting menu or ask for something
+            you have never tasted.</p>
+        </div>
+        <div class="tiers">
+          <article class="tier" data-aos="fade-up">
+            <h3>Classic pairing</h3><b class="price">₹5,500</b>
+            <p>Six glasses from small growers in Burgundy, Piedmont and the Mosel.</p>
+          </article>
+          <article class="tier feat" data-aos="fade-up" data-aos-delay="100">
+            <h3>Reserve pairing</h3><b class="price">₹9,000</b>
+            <p>Older vintages and rare bottles, poured alongside the heaviest courses.</p>
+          </article>
+          <article class="tier" data-aos="fade-up" data-aos-delay="200">
+            <h3>Zero-proof pairing</h3><b class="price">₹3,200</b>
+            <p>House ferments, teas and pressed juices, matched course by course.</p>
+          </article>
+        </div>
+        <h3 data-aos="fade-up" class="glass-h">By the glass</h3>
+        <ul data-aos="fade-up" class="list glass">
+          <li class="row-li">
+            <div class="d-top">
+              <h3>Champagne, Grower dry</h3><i class="ll"></i><span class="price">₹1,600</span>
+            </div>
+            <p>Montagne de Reims</p>
+          </li>
+          <li class="row-li">
+            <div class="d-top">
+              <h3>Burgundy, Chablis reserve</h3><i class="ll"></i><span class="price">₹1,900</span>
+            </div>
+            <p>Chardonnay</p>
+          </li>
+          <li class="row-li">
+            <div class="d-top">
+              <h3>Mosel Riesling Kabinett</h3><i class="ll"></i><span class="price">₹1,300</span>
+            </div>
+            <p>Off-dry, mineral</p>
+          </li>
+          <li class="row-li">
+            <div class="d-top">
+              <h3>Piedmont Nebbiolo</h3><i class="ll"></i><span class="price">₹1,700</span>
+            </div>
+            <p>Langhe, medium body</p>
+          </li>
+          <li class="row-li">
+            <div class="d-top">
+              <h3>Tamil Nadu cold-brew tonic</h3><i class="ll"></i><span class="price">₹650</span>
+            </div>
+            <p>Non-alcoholic</p>
+          </li>
+          <li class="row-li">
+            <div class="d-top">
+              <h3>House cardamom old fashioned</h3><i class="ll"></i><span class="price">₹1,100</span>
+            </div>
+            <p>Cocktail</p>
+          </li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- 7 GOOD TO KNOW -->
+    <section class="section notes" id="notes">
+      <div class="wrap grid-2 top">
+        <div class="n-side" data-aos="fade-up">
+          <h2>Good to know</h2>
+          <p>A few answers before you book. For anything else, write to us and a person will reply within a day.</p>
+          <a href="contact.html" class="notes-btn">
+            <span>Contact the team</span>
+            <span class="notes-btn-icon"><i class="fa-solid fa-arrow-right"></i></span>
+          </a>
+        </div>
+        <div data-aos="fade-up" data-aos-delay="100" class="faq" id="faq">
+          <div class="faq-item is-open"><button class="faq-q" type="button" aria-expanded="true"><span>How do you handle
+                allergies?</span><i class="fa-solid fa-plus" aria-hidden="true"></i></button>
+            <div class="faq-a">
+              <p>Tell us when you book and again at the table. The kitchen plans every course around what you cannot
+                eat. Please confirm any dish with your server, because recipes change with the season.</p>
+            </div>
+          </div>
+          <div class="faq-item"><button class="faq-q" type="button" aria-expanded="false"><span>Can the tasting menu be
+                vegetarian?</span><i class="fa-solid fa-plus" aria-hidden="true"></i></button>
+            <div class="faq-a">
+              <p>Yes. Ask for the vegetarian tasting menu when you reserve, with at least 48 hours&rsquo; notice, and
+                the kitchen will write a full ten courses for you.</p>
+            </div>
+          </div>
+          <div class="faq-item"><button class="faq-q" type="button" aria-expanded="false"><span>Is the menu always the
+                same?</span><i class="fa-solid fa-plus" aria-hidden="true"></i></button>
+            <div class="faq-a">
+              <p>No. The dishes change as growers send word of what is ripe. The tasting menu is rewritten every few
+                weeks, and the individual plates follow the market.</p>
+            </div>
+          </div>
+          <div class="faq-item"><button class="faq-q" type="button" aria-expanded="false"><span>Do prices include
+                tax?</span><i class="fa-solid fa-plus" aria-hidden="true"></i></button>
+            <div class="faq-a">
+              <p>Prices are in Indian rupees and exclude GST. A service charge is added to the bill and shared by the
+                whole team.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 8 CLOSING CALL -->
+    <section class="section m-cta">
+      <div class="wrap" data-aos="fade-up">
+        <h2>Your table is <em>waiting.</em></h2>
+        <p>Tables open sixty days ahead, Tuesday to Sunday, from 6:30 pm.</p>
+        <div class="hero-cta"><a href="login.html" class="btn"><i class="fa-solid fa-calendar-check" aria-hidden="true"></i> Reserve a table</a><a href="tel:+919876543210"
+            class="link">Call +91 9876543210</a></div>
+      </div>
+    </section>
+  </main>
+
+
+  <footer class="footer">
+    <div class="wrap foot-grid">
+      <div data-aos="fade-up" data-aos-offset="0" class="foot-brand">
+        <a href="index.html" class="logo"><img src="assets/images/logo.webp" alt="Stackly"></a>
+        <p>A 28-seat dining room serving a seasonal ten-course tasting menu. Two Michelin stars.</p>
+        <ul class="social" aria-label="Social media">
+          <li><a href="404.html" aria-label="Instagram"><i class="fa-brands fa-instagram" aria-hidden="true"></i></a>
+          </li>
+          <li><a href="404.html" aria-label="Facebook"><i class="fa-brands fa-facebook-f" aria-hidden="true"></i></a>
+          </li>
+          <li><a href="404.html" aria-label="X"><i class="fa-brands fa-x-twitter" aria-hidden="true"></i></a></li>
+          <li><a href="404.html" aria-label="YouTube"><i class="fa-brands fa-youtube" aria-hidden="true"></i></a></li>
+        </ul>
+      </div>
+      <div data-aos="fade-up" data-aos-delay="100" data-aos-offset="0">
+        <h4>Explore</h4>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="about.html">About Us</a></li>
+          <li><a href="menu.html">Menu</a></li>
+          <li><a href="blog.html">Blog</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </div>
+      <div data-aos="fade-up" data-aos-delay="200" data-aos-offset="0">
+        <h4>Visit</h4>
+        <address>
+          <div class="vi"><i class="fa-solid fa-location-dot" aria-hidden="true"></i><span>Salem, Tamil Nadu,<br>
+              India.</span></div>
+          <div class="vi"><i class="fa-regular fa-clock" aria-hidden="true"></i><span>Tuesday - Sunday, 6:30 - 11
+              pm</span></div>
+          <div class="vi"><i class="fa-solid fa-phone" aria-hidden="true"></i><a href="404.html">+91 9876543210</a>
+          </div>
+          <div class="vi"><i class="fa-regular fa-envelope" aria-hidden="true"></i><a
+              href="404.html">info@thestackly.com</a></div>
+        </address>
+      </div>
+      <div data-aos="fade-up" data-aos-delay="300" data-aos-offset="0">
+        <h4>Seasonal news</h4>
+        <p>New menus, wine dinners and openings, a few times a year.</p>
+        <form class="news" id="news">
+          <input type="text" inputmode="email" placeholder="Your email address" aria-label="Email address"
+            autocomplete="email">
+          <button type="submit"><i class="fa-solid fa-paper-plane" aria-hidden="true"></i> Subscribe</button>
+        </form>
+        <p class="note" id="newsNote" role="status"></p>
+      </div>
+    </div>
+    <div class="wrap foot-bar">
+      <span>&copy; 2026 Stackly. All rights reserved.</span>
+      <span class="legal"><a href="404.html">Privacy</a><a href="404.html">Terms</a><a href="404.html">Accessibility</a></span>
+      <a href="#top">Back to top <i class="fa-solid fa-arrow-up" aria-hidden="true"></i></a>
+    </div>
+  </footer>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/lenis@1.1.13/dist/lenis.min.js"></script>
+  <script src="assets/js/menu.js"></script>
+</body>
+
+</html>

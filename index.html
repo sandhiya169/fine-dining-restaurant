@@ -1,0 +1,466 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Stackly — Fine Dining Restaurant</title>
+<meta name="description" content="Stackly: a 28-seat fine dining room serving a seasonal ten-course tasting menu.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Manrope:wght@300;400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/lenis@1.1.13/dist/lenis.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+<link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+<div id="preloader" role="status" aria-live="polite" aria-label="Loading">
+  <div class="pre-inner">
+    <img class="pre-logo" src="assets/images/logo.webp" alt="Stackly" width="172" height="50">
+    <span class="pre-bar" aria-hidden="true"><i></i></span>
+    <span class="pre-text">Setting the table</span>
+  </div>
+</div>
+
+<header class="nav" id="nav">
+  <div class="topbar">
+    <span>Salem, Tamil Nadu, India.</span>
+    <span>Tuesday – Sunday, 6:30 – 11 pm</span>
+    <a href="404.html">+91 9876543210</a>
+  </div>
+  <div class="bar">
+    <a href="index.html" class="logo"><img src="assets/images/logo.webp" alt="Stackly"></a>
+    <nav id="menu" aria-label="Main">
+      <a href="index.html">Home</a>
+      <a href="about.html">About Us</a>
+      <a href="menu.html">Menu</a>
+      <a href="blog.html">Blog</a>
+      <a href="contact.html">Contact</a>
+      <a href="login.html" class="btn btn-sm menu-cta"><i class="fa-solid fa-calendar-check" aria-hidden="true"></i> Reserve</a>
+    </nav>
+    <a href="login.html" class="btn btn-sm bar-cta"><i class="fa-solid fa-user" aria-hidden="true"></i> Login</a>
+    <button class="burger" id="burger" aria-label="Open menu" aria-expanded="false"><span></span><span></span></button>
+  </div>
+</header>
+
+<main>
+<!-- 1 HERO: full-bleed cover — centred headline over the dining-room photo, glass fact bar below -->
+<section class="hero" id="home">
+  <div class="hero-bg" id="heroBg" aria-hidden="true">
+    <img src="assets/images/hero-evening-dining.webp" alt="" fetchpriority="high">
+  </div>
+
+  <div class="hero-main">
+    <p class="hero-kicker"><span>Twenty-eight seats. One tasting menu.</span></p>
+    <h1 aria-label="Dinner, composed slowly.">
+      <span class="line"><span>Dinner, <em>composed</em></span></span>
+      <span class="line"><span>slowly.</span></span>
+    </h1>
+    <div class="hero-cta">
+      <a href="login.html" class="btn"><i class="fa-solid fa-calendar-check" aria-hidden="true"></i> Reserve a table</a>
+      <a href="404.html" class="link">See the tasting menu</a>
+    </div>
+  </div>
+
+  <ul class="hero-facts" aria-label="At a glance">
+    <li><span class="hf-label">Service</span><span class="hf-val">Tuesday – Sunday · From 6:30 pm</span></li>
+    <li><span class="hf-label">Find us</span><span class="hf-val">Salem, Tamil Nadu</span></li>
+    <li><span class="hf-label">Since 2016</span><span class="hf-val">Ten-course tasting menu</span></li>
+  </ul>
+</section>
+
+<!-- 2 MARQUEE -->
+<section data-aos="fade" data-aos-duration="1200" class="marquee" aria-label="Accolades">
+  <div class="track">
+    <span>Two Michelin stars</span><i></i><span>Best New Restaurant, Gault&Millau</span><i></i><span>Wine Spectator Grand Award</span><i></i><span>Two Michelin stars</span><i></i><span>Best New Restaurant, Gault&Millau</span><i></i><span>Wine Spectator Grand Award</span><i></i>
+  </div>
+</section>
+
+<!-- 3 PHILOSOPHY -->
+<section class="section philosophy" id="philosophy">
+  <div class="wrap ph-wrap">
+
+    <div data-aos="fade-up" class="ph-imgs">
+      <figure class="ph-img-main">
+        <img data-speed="0.9" src="assets/images/dining-room-candlelit.webp" alt="Candlelit dining room" loading="lazy">
+      </figure>
+      <figure class="ph-img-small">
+        <img data-speed="1.15" src="assets/images/hand-finished-dish.webp" alt="Hand-finished dish" loading="lazy">
+      </figure>
+      <span class="ph-tag" aria-hidden="true">Salem · Est. 2016</span>
+    </div>
+
+    <div class="ph-body" data-aos="fade-up">
+      <span class="ph-kicker">Our philosophy</span>
+      <h2>We cook what the week gives us.</h2>
+      <p>Every morning our farmers, fishermen and foragers send word of what is at its peak. The menu is written after that, never before. It is a quiet way of cooking: few ingredients, patient technique, and an honest sense of place.</p>
+      <a href="about.html" class="link ph-link">Read our full story</a>
+
+      <ul class="stats">
+        <li>
+          <b data-count="28">0</b>
+          <span>seats</span>
+        </li>
+        <li>
+          <b data-count="14">0</b>
+          <span>local growers</span>
+        </li>
+        <li>
+          <b data-count="600">0</b>
+          <span>wines in the cellar</span>
+        </li>
+      </ul>
+    </div>
+
+  </div>
+</section>
+
+<!-- 4 SIGNATURES -->
+<section class="section signatures" id="signatures">
+  <div class="wrap">
+    <div class="sig-head">
+      <h2 data-aos="fade-up">Signature plates</h2>
+      <div data-aos="fade-up" class="sig-tabs" role="tablist" aria-label="Choose a kitchen">
+        <button type="button" role="tab" id="tab-indian" aria-controls="panel-indian" aria-selected="true"><i class="fa-solid fa-bowl-rice" aria-hidden="true"></i> Indian kitchen</button>
+        <button type="button" role="tab" id="tab-european" aria-controls="panel-european" aria-selected="false"><i class="fa-solid fa-utensils" aria-hidden="true"></i> European kitchen</button>
+      </div>
+    </div>
+    <div data-aos="fade-up" class="sig-panel" id="panel-indian" role="tabpanel" aria-labelledby="tab-indian">
+      <h3 class="dish-group">From the Indian kitchen</h3>
+      <ul class="dishes">
+      <li><div><h3>Hyderabadi dum biryani</h3><p>Saffron basmati, slow-cooked lamb, burani raita</p></div><img src="assets/images/dum-biryani.webp" alt="Dum biryani" loading="lazy"><span>₹1,450</span></li>
+      <li><div><h3>Chettinad pepper chicken</h3><p>Black pepper, curry leaf, kalpasi</p></div><img src="assets/images/chettinad-chicken.webp" alt="Chettinad chicken curry" loading="lazy"><span>₹1,150</span></li>
+      <li><div><h3>Tandoori lamb chops</h3><p>Kashmiri chilli, mint chutney, pickled onion</p></div><img src="assets/images/tandoori-lamb.webp" alt="Tandoori lamb chops" loading="lazy"><span>₹1,650</span></li>
+      <li><div><h3>Smoked paneer makhani</h3><p>Tomato-fenugreek gravy, cashew cream</p></div><img src="assets/images/paneer-makhani.webp" alt="Paneer makhani" loading="lazy"><span>₹950</span></li>
+    </ul>
+    </div>
+    <div data-aos="fade-up" class="sig-panel" id="panel-european" role="tabpanel" aria-labelledby="tab-european">
+      <h3 class="dish-group">From the European kitchen</h3>
+      <ul class="dishes">
+      <li><div><h3>Hand-dived scallop</h3><p>Brown butter, yuzu, celeriac</p></div><img src="assets/images/scallop-dish.webp" alt="Scallop dish" loading="lazy"><span>₹1,850</span></li>
+      <li><div><h3>Pan-seared sea bass</h3><p>Curry-leaf butter, smoked beet, thyme</p></div><img src="assets/images/sea-bass.webp" alt="Sea bass main course" loading="lazy"><span>₹2,450</span></li>
+      <li><div><h3>Wild mushroom royale</h3><p>Truffle custard, chervil, rye</p></div><img src="assets/images/mushroom-dish.webp" alt="Mushroom dish" loading="lazy"><span>₹1,350</span></li>
+      <li><div><h3>Dark chocolate sphere</h3><p>Warm salted caramel, hazelnut</p></div><img src="assets/images/chocolate-dessert.webp" alt="Chocolate dessert" loading="lazy"><span>₹950</span></li>
+    </ul>
+    </div>
+  </div>
+</section>
+
+<!-- 5 TASTING MENU (horizontal pinned) -->
+<section class="tasting" id="tasting">
+  <div class="tasting-head wrap">
+    <h2>The ten-course tasting menu</h2>
+    <p data-aos="fade-up">Served in order, over about three hours. ₹9,500 per guest, wine pairing ₹5,500.</p>
+  </div>
+  <div data-aos="fade-up" class="courses" id="courses">
+    <article style="background-image:url('assets/images/scallop-dish.webp')">
+      <span class="n">I</span><h3>Oyster, cucumber, dill oil</h3><p>A cold, bright first bite.</p>
+    </article>
+    <article style="background-image:url('assets/images/tomato-broth.webp')">
+      <span class="n">II</span><h3>Heirloom tomato broth</h3><p>Clarified overnight, served warm.</p>
+    </article>
+    <article style="background-image:url('assets/images/scallop-pomfret.webp')">
+      <span class="n">III</span><h3>Scallop, yuzu, brown butter</h3><p>Seared on one side only.</p>
+    </article>
+    <article style="background-image:url('assets/images/dumplings.webp')">
+      <span class="n">IV</span><h3>Hand-rolled dumplings</h3><p>Aged parmesan, black garlic.</p>
+    </article>
+    <article style="background-image:url('assets/images/scallop-pomfret.webp')">
+      <span class="n">V</span><h3>Line-caught pomfret</h3><p>Lemon butter sauce, sea herbs.</p>
+    </article>
+    <article style="background-image:url('assets/images/sea-bass.webp')">
+      <span class="n">VI</span><h3>Pan-seared sea bass</h3><p>Curry-leaf butter, smoked beet.</p>
+    </article>
+    <article style="background-image:url('assets/images/aged-cheese.webp')">
+      <span class="n">VII</span><h3>Aged cheese, honeycomb</h3><p>From a farm 40 km away.</p>
+    </article>
+    <article style="background-image:url('assets/images/sorbet.webp')">
+      <span class="n">VIII</span><h3>Sorbet of green apple</h3><p>A pause before sweetness.</p>
+    </article>
+    <article style="background-image:url('assets/images/chocolate-dessert.webp')">
+      <span class="n">IX</span><h3>Dark chocolate sphere</h3><p>Poured table-side.</p>
+    </article>
+    <article style="background-image:url('assets/images/small-sweets.webp')">
+      <span class="n">X</span><h3>Small sweets</h3><p>With tea or an espresso.</p>
+    </article>
+  </div>
+</section>
+
+<!-- 6 CHEF -->
+<section class="section chef" id="chef">
+  <div class="wrap chef-wrap">
+
+    <div class="chef-img-col" data-aos="fade-right">
+      <div class="chef-img">
+        <img src="assets/images/chef-meera.webp" alt="Chef plating a dish" loading="lazy">
+      </div>
+      <div class="chef-credential">
+        <span class="chef-credential-num">15</span>
+        <span class="chef-credential-label">years in professional kitchens</span>
+      </div>
+    </div>
+
+    <div class="chef-body" data-aos="fade-up">
+      <span class="chef-kicker">Behind the kitchen</span>
+      <h2>Chef Meera Raghavan</h2>
+      <p>Trained in Chennai and Kyoto, Meera opened Stackly after fifteen years in other people’s kitchens. She cooks with restraint: one idea per plate, finished by hand.</p>
+      <blockquote>“If a sauce needs an explanation, it isn’t finished.”</blockquote>
+      <ul class="chef-facts">
+        <li><i class="fa-solid fa-location-dot" aria-hidden="true"></i><span>Salem, Tamil Nadu</span></li>
+        <li><i class="fa-solid fa-award" aria-hidden="true"></i><span>Two Michelin stars, 2022</span></li>
+        <li><i class="fa-solid fa-utensils" aria-hidden="true"></i><span>Trained in Chennai &amp; Kyoto</span></li>
+      </ul>
+      <a href="about.html#team" class="chef-link">Meet the full team <i class="fa-solid fa-arrow-right" aria-hidden="true"></i></a>
+    </div>
+  </div>
+</section>
+
+<!-- 7 AMBIENCE GALLERY -->
+<section class="gallery" id="rooms">
+
+  <!-- Left: editorial info panel -->
+  <div class="room-panel" data-aos="fade-right">
+    <div class="room-panel-inner">
+      <span class="room-kicker"><span class="room-kicker-line"></span>The Room</span>
+      <h2 class="room-title">A table worth<br> the <em>journey.</em><br></h2>
+      <p class="room-desc">28 seats. A single sitting. The room is designed around one idea: nothing between you and the food.</p>
+      <ul class="room-facts">
+        <li><span class="rf-val">28</span><span class="rf-label">Covers per night</span></li>
+        <li><span class="rf-val">6:30</span><span class="rf-label">pm doors open</span></li>
+        <li><span class="rf-val">2</span><span class="rf-label">Michelin stars</span></li>
+      </ul>
+      <a href="about.html" class="room-link">
+        <span>Discover the space</span>
+        <span class="room-link-icon"><i class="fa-solid fa-arrow-right"></i></span>
+      </a>
+    </div>
+  </div>
+
+  <!-- Right: horizontal scroll gallery -->
+  <div class="room-gallery" id="roomGallery">
+    <figure class="rg-item rg-item--tall" data-aos="fade-left">
+      <img src="assets/images/image-12.webp" alt="Main dining room" loading="lazy">
+      <figcaption>The dining room, dusk</figcaption>
+    </figure>
+    <figure class="rg-item" data-aos="fade-left" data-aos-delay="80">
+      <img src="assets/images/image-4.webp" alt="Set table" loading="lazy">
+      <figcaption>Table setting</figcaption>
+    </figure>
+    <figure class="rg-item" data-aos="fade-left" data-aos-delay="160">
+      <img src="assets/images/image-3.webp" alt="Bar cocktail" loading="lazy">
+      <figcaption>The bar</figcaption>
+    </figure>
+    <figure class="rg-item rg-item--wide" data-aos="fade-left" data-aos-delay="240">
+      <img src="assets/images/image-5.webp" alt="Evening dining" loading="lazy">
+      <figcaption>Evening service</figcaption>
+    </figure>
+  </div>
+
+</section>
+
+<!-- 8 CELLAR -->
+<section class="section cellar" id="cellar">
+  <div class="wrap">
+    <div class="cellar-stage">
+      <figure class="cellar-photo" data-aos="fade-right"><img src="assets/images/image-11.webp" alt="Wine glasses and bottle" width="1100" height="760" loading="lazy"></figure>
+      <div class="cellar-label" data-aos="fade-up" data-aos-delay="150">
+        <h2>A cellar of <em>600</em> labels</h2>
+        <p>Our wine director, Arjun Menon, favours small growers and old vintages. Ask for a pairing, or for something you have never tasted.</p>
+        <ul class="tags"><li>Burgundy</li><li>Champagne</li><li>Piedmont</li><li>Mosel</li></ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 9 TESTIMONIALS -->
+<section class="section reviews" id="reviews">
+  <div class="wrap">
+
+    <div class="rev-header" data-aos="fade-up">
+      <span class="rev-kicker">What guests say</span>
+      <h2>Words from the table</h2>
+    </div>
+
+    <div data-aos="fade-up" class="rev-stage">
+
+      <!-- large decorative mark -->
+      <span class="rev-mark" aria-hidden="true">&ldquo;</span>
+
+      <div class="slides" id="slides">
+
+        <figure class="on">
+          <div class="rev-stars" aria-label="5 stars">
+            <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+          </div>
+          <blockquote>The most calm and certain meal I have eaten in years.</blockquote>
+          <figcaption>
+            <span class="rev-name">Anna R.</span>
+            <span class="rev-source">Food &amp; Travel</span>
+          </figcaption>
+        </figure>
+
+        <figure>
+          <div class="rev-stars" aria-label="5 stars">
+            <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+          </div>
+          <blockquote>Ten courses and not one wasted gesture. The sea bass alone is worth the trip.</blockquote>
+          <figcaption>
+            <span class="rev-name">James L.</span>
+            <span class="rev-source">Guest</span>
+          </figcaption>
+        </figure>
+
+        <figure>
+          <div class="rev-stars" aria-label="5 stars">
+            <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+          </div>
+          <blockquote>Service that feels like being looked after by old friends.</blockquote>
+          <figcaption>
+            <span class="rev-name">Priya S.</span>
+            <span class="rev-source">Guest</span>
+          </figcaption>
+        </figure>
+
+      </div>
+
+      <!-- navigation -->
+      <div class="rev-nav">
+        <div class="dots" id="dots" role="tablist" aria-label="Reviews">
+          <button class="on" aria-label="Review 1"></button>
+          <button aria-label="Review 2"></button>
+          <button aria-label="Review 3"></button>
+        </div>
+        <div class="rev-arrows">
+          <button class="rev-arrow" id="revPrev" aria-label="Previous review">
+            <i class="fa-solid fa-arrow-left"></i>
+          </button>
+          <button class="rev-arrow" id="revNext" aria-label="Next review">
+            <i class="fa-solid fa-arrow-right"></i>
+          </button>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- trust strip -->
+    <ul data-aos="fade-up" class="rev-trust" aria-label="As featured in">
+      <li>Michelin Guide</li>
+      <li>Gault&amp;Millau</li>
+      <li>Wine Spectator</li>
+      <li>The Hindu</li>
+      <li>Times Food</li>
+    </ul>
+
+  </div>
+</section>
+
+<!-- 10 RESERVATION -->
+<!-- 10 RESERVATION -->
+<section class="reserve" id="reserve">
+
+  <!-- background image layer -->
+  <div class="reserve-bg" aria-hidden="true">
+    <img src="assets/images/hero-evening-dining.webp" alt="">
+  </div>
+
+  <div class="wrap reserve-wrap">
+
+    <!-- Left: content -->
+    <div class="reserve-info" data-aos="fade-up">
+      <span class="reserve-kicker">Tables open sixty days ahead</span>
+      <h2>Reserve your evening</h2>
+      <p>For parties of seven or more, or private dining, write to <a href="404.html">info@thestackly.com</a>.</p>
+
+      <ul class="reserve-details">
+        <li>
+          <span class="reserve-icon"><i class="fa-solid fa-location-dot" aria-hidden="true"></i></span>
+          <span>Salem, Tamil Nadu, India.</span>
+        </li>
+        <li>
+          <span class="reserve-icon"><i class="fa-regular fa-clock" aria-hidden="true"></i></span>
+          <span>Tuesday – Sunday, 6:30 – 11 pm</span>
+        </li>
+        <li>
+          <span class="reserve-icon"><i class="fa-solid fa-phone" aria-hidden="true"></i></span>
+          <a href="404.html">+91 9876543210</a>
+        </li>
+      </ul>
+
+      <div class="reserve-badges">
+        <span><i class="fa-solid fa-star" aria-hidden="true"></i> Two Michelin Stars</span>
+        <span><i class="fa-solid fa-wine-glass" aria-hidden="true"></i> 600-label cellar</span>
+        <span><i class="fa-solid fa-seedling" aria-hidden="true"></i> Seasonal menu</span>
+      </div>
+    </div>
+
+    <!-- Right: form — untouched -->
+    <form id="form" data-aos="fade-up" data-aos-delay="100" novalidate>
+      <label>Name<input required name="name" autocomplete="name" placeholder="Your full name"><small class="err"></small></label>
+      <label>Email<input required type="email" name="email" autocomplete="email" placeholder="you@example.com"><small class="err"></small></label>
+      <div class="row">
+        <label>Date<input required type="text" name="date" placeholder="DD / MM / YYYY" maxlength="14" inputmode="numeric" autocomplete="off"><small class="err"></small></label>
+        <label>Guests<select name="guests"><option>2</option><option>3</option><option>4</option><option>5</option><option>6</option></select><small class="err"></small></label>
+      </div>
+      <button class="btn" type="submit"><i class="fa-solid fa-calendar-plus" aria-hidden="true"></i> Request table</button>
+      <p class="note" id="note" role="status"></p>
+    </form>
+
+  </div>
+</section>
+</main>
+
+<footer class="footer">
+  <div class="wrap foot-grid">
+    <div data-aos="fade-up" data-aos-offset="0" class="foot-brand">
+      <a href="index.html" class="logo"><img src="assets/images/logo.webp" alt="Stackly"></a>
+      <p>A 28-seat dining room serving a seasonal ten-course tasting menu. Two Michelin stars.</p>
+      <ul class="social" aria-label="Social media">
+        <li><a href="404.html" aria-label="Instagram"><i class="fa-brands fa-instagram" aria-hidden="true"></i></a></li>
+        <li><a href="404.html" aria-label="Facebook"><i class="fa-brands fa-facebook-f" aria-hidden="true"></i></a></li>
+        <li><a href="404.html" aria-label="X"><i class="fa-brands fa-x-twitter" aria-hidden="true"></i></a></li>
+        <li><a href="404.html" aria-label="YouTube"><i class="fa-brands fa-youtube" aria-hidden="true"></i></a></li>
+      </ul>
+    </div>
+    <div data-aos="fade-up" data-aos-delay="100" data-aos-offset="0">
+      <h4>Explore</h4>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About Us</a></li>
+        <li><a href="menu.html">Menu</a></li>
+        <li><a href="blog.html">Blog</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </div>
+    <div data-aos="fade-up" data-aos-delay="200" data-aos-offset="0">
+      <h4>Visit</h4>
+      <address>
+        <div class="vi"><i class="fa-solid fa-location-dot" aria-hidden="true"></i><span>Salem, Tamil Nadu,<br> India.</span></div>
+        <div class="vi"><i class="fa-regular fa-clock" aria-hidden="true"></i><span>Tuesday – Sunday, 6:30 – 11 pm</span></div>
+        <div class="vi"><i class="fa-solid fa-phone" aria-hidden="true"></i><a href="404.html">+91 9876543210</a></div>
+        <div class="vi"><i class="fa-regular fa-envelope" aria-hidden="true"></i><a href="404.html">info@thestackly.com</a></div>
+      </address>
+    </div>
+    <div data-aos="fade-up" data-aos-delay="300" data-aos-offset="0">
+      <h4>Seasonal news</h4>
+      <p>New menus, wine dinners and openings, a few times a year.</p>
+      <form class="news" id="news">
+        <input type="text" inputmode="email" placeholder="Your email address" aria-label="Email address" autocomplete="email">
+        <button type="submit"><i class="fa-solid fa-paper-plane" aria-hidden="true"></i> Subscribe</button>
+      </form>
+      <p class="note" id="newsNote" role="status"></p>
+    </div>
+  </div>
+  <div class="wrap foot-bar">
+    <span>© 2026 Stackly. All rights reserved.</span>
+    <span class="legal"><a href="404.html">Privacy</a><a href="404.html">Terms</a><a href="404.html">Accessibility</a></span>
+    <a href="#home">Back to top <i class="fa-solid fa-arrow-up" aria-hidden="true"></i></a>
+  </div>
+</footer>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/lenis@1.1.13/dist/lenis.min.js"></script>
+<script src="assets/js/main.js"></script>
+</body>
+</html>

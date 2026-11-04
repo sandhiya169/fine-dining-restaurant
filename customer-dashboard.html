@@ -1,0 +1,294 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>My Dashboard — Stackly</title>
+<meta name="robots" content="noindex">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Manrope:wght@300;400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css">
+<link rel="stylesheet" href="assets/css/style.css">
+<link rel="stylesheet" href="assets/css/dashboard.css">
+</head>
+<body data-role="customer">
+<div class="dash">
+  <aside class="side" id="side" aria-label="Dashboard menu">
+    <a href="customer-dashboard.html" class="logo"><img src="assets/images/logo.webp" alt="Stackly"></a>
+    <p class="who">Customer Dashboard</p>
+    <nav>
+      <button class="on" data-view="overview"><i class="fa-solid fa-house" aria-hidden="true"></i>Overview</button>
+      <button data-view="reservations"><i class="fa-solid fa-calendar-check" aria-hidden="true"></i>Reservations</button>
+      <button data-view="favourites"><i class="fa-solid fa-heart" aria-hidden="true"></i>Favourites</button>
+      <button data-view="rewards"><i class="fa-solid fa-gift" aria-hidden="true"></i>Rewards</button>
+    </nav>
+    <div class="user user-side"><span class="av" id="av-side">G</span><span id="email-side">Guest</span></div>
+    <div class="foot">
+      <a href="index.html"><i class="fa-solid fa-arrow-left" aria-hidden="true"></i>Back to Home</a>
+      <a href="login.html"><i class="fa-solid fa-right-from-bracket" aria-hidden="true"></i>Logout</a>
+    </div>
+  </aside>
+  <div class="scrim" id="scrim"></div>
+  <div class="main">
+    <header class="top">
+      <button class="mb" id="mb" aria-label="Open menu" aria-expanded="false"><i class="fa-solid fa-bars" aria-hidden="true"></i></button>
+      <h1 id="title">Overview</h1>
+      <div class="notif-wrap">
+        <button class="notif" id="notif" aria-label="Notifications" aria-haspopup="true">
+          <i class="fa-solid fa-bell" aria-hidden="true"></i>
+          <span class="badge" id="notif-count">3</span>
+        </button>
+        <div class="notif-panel" id="notif-panel" role="dialog" aria-label="Notifications" hidden>
+          <p class="notif-head">Notifications</p>
+          <ul>
+            <li><a href="404.html"><i class="fa-solid fa-calendar-check ok" aria-hidden="true"></i><div><strong>Booking confirmed</strong><span>Sat 14 Nov, 8:00 pm · 4 guests</span></div></a></li>
+            <li><a href="404.html"><i class="fa-solid fa-gift brass" aria-hidden="true"></i><div><strong>You've earned 120 points</strong><span>From your last visit on 12 Oct</span></div></a></li>
+            <li><a href="404.html"><i class="fa-solid fa-tag brass" aria-hidden="true"></i><div><strong>New offer available</strong><span>Complimentary dessert — valid till 30 Nov</span></div></a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="user"><span class="av" id="av">G</span><span id="email">Guest</span></div>
+    </header>
+
+    <div class="grid" id="view" aria-live="polite">
+
+      <!-- ======== OVERVIEW ======== -->
+      <div class="view-panel" data-panel="overview">
+
+        <section data-aos="fade-up" class="card wide">
+          <header><h3>At a glance</h3></header>
+          <div class="kpis">
+            <div><b>12</b><span>Visits</span></div>
+            <div><b>2,480</b><span>Reward points</span></div>
+            <div><b>14 Nov</b><span>Next table</span></div>
+            <div><b>₹58k</b><span>Spent this year</span></div>
+          </div>
+        </section>
+
+        <section data-aos="fade-up" data-aos-delay="80" class="card">
+          <header><h3>Spend by month (₹ thousand)</h3><a class="btn btn-sm" href="404.html"><i class="fa-solid fa-file-invoice" aria-hidden="true"></i> View statement</a></header>
+          <svg class="chart" viewBox="0 0 300 110" preserveAspectRatio="none" role="img" aria-label="Line chart">
+            <polygon class="area" points="0,110 0,89.5 50,76.4 100,82.9 150,50.6 200,64.1 250,30.7 300,10 300,110"/>
+            <polyline class="ln" pathLength="1" points="0,89.5 50,76.4 100,82.9 150,50.6 200,64.1 250,30.7 300,10"/>
+          </svg>
+          <div class="xl"><span>Apr</span><span>May</span><span>Jun</span><span>Jul</span><span>Aug</span><span>Sep</span><span>Oct</span></div>
+        </section>
+
+        <section data-aos="fade-up" data-aos-delay="160" class="card">
+          <header><h3>Next reservation</h3></header>
+          <div class="imgs n1">
+            <figure>
+              <img src="assets/images/hero-evening-dining.webp" alt="Sat 14 Nov, 8:00 pm, 4 guests" loading="lazy">
+              <figcaption>Sat 14 Nov, 8:00 pm, 4 guests<a class="btn btn-sm" href="404.html"><i class="fa-solid fa-gear" aria-hidden="true"></i> Manage</a></figcaption>
+            </figure>
+          </div>
+        </section>
+
+        <section data-aos="fade-up" class="card">
+          <header><h3>Favourite cuisines</h3></header>
+          <div class="donut">
+            <svg viewBox="0 0 36 36" role="img" aria-label="Donut chart">
+              <circle class="c0" cx="18" cy="18" r="15.9155" stroke-dasharray="45 55" stroke-dashoffset="0"/>
+              <circle class="c1" cx="18" cy="18" r="15.9155" stroke-dasharray="30 70" stroke-dashoffset="-45"/>
+              <circle class="c2" cx="18" cy="18" r="15.9155" stroke-dasharray="15 85" stroke-dashoffset="-75"/>
+              <circle class="c3" cx="18" cy="18" r="15.9155" stroke-dasharray="10 90" stroke-dashoffset="-90"/>
+            </svg>
+            <ul>
+              <li><i class="k0"></i>Indian<b>45%</b></li>
+              <li><i class="k1"></i>European<b>30%</b></li>
+              <li><i class="k2"></i>Dessert<b>15%</b></li>
+              <li><i class="k3"></i>Wine<b>10%</b></li>
+            </ul>
+          </div>
+        </section>
+
+        <section data-aos="fade-up" data-aos-delay="80" class="card wide">
+          <header><h3>Recent visits</h3></header>
+          <ul class="rows">
+            <li><div><h4>Ten-course tasting</h4><span>12 Oct, 2 guests</span></div><a class="tag" href="404.html">Receipt</a></li>
+            <li><div><h4>Chettinad pepper chicken</h4><span>28 Sep, 4 guests</span></div><a class="tag" href="404.html">Receipt</a></li>
+            <li><div><h4>Wine dinner</h4><span>5 Sep, 2 guests</span></div><a class="tag" href="404.html">Receipt</a></li>
+          </ul>
+        </section>
+
+      </div><!-- /overview -->
+
+      <!-- ======== RESERVATIONS ======== -->
+      <div class="view-panel" data-panel="reservations" hidden>
+
+        <section data-aos="fade-up" class="card wide">
+          <header><h3>Booking summary</h3></header>
+          <div class="kpis">
+            <div><b>2</b><span>Upcoming</span></div>
+            <div><b>10</b><span>Past</span></div>
+            <div><b>0</b><span>Cancelled</span></div>
+            <div><b>4</b><span>Largest party</span></div>
+          </div>
+        </section>
+
+        <section data-aos="fade-up" data-aos-delay="80" class="card wide">
+          <header><h3>Your tables</h3><a class="btn btn-sm" href="404.html"><i class="fa-solid fa-calendar-plus" aria-hidden="true"></i> New booking</a></header>
+          <div class="tw">
+            <table>
+              <thead><tr><th>Date</th><th>Guests</th><th>Room</th><th>Status</th></tr></thead>
+              <tbody>
+                <tr><td>14 Nov</td><td>4</td><td>Main room</td><td><em class="ok">Confirmed</em></td></tr>
+                <tr><td>29 Nov</td><td>2</td><td>Chef's counter</td><td><em class="wait">Pending</em></td></tr>
+                <tr><td>12 Oct</td><td>2</td><td>Main room</td><td><em>Completed</em></td></tr>
+                <tr><td>28 Sep</td><td>4</td><td>Terrace</td><td><em>Completed</em></td></tr>
+              </tbody>
+            </table>
+          </div>
+        </section>
+
+        <section data-aos="fade-up" data-aos-delay="160" class="card">
+          <header><h3>Visits per month</h3></header>
+          <div class="bars" role="img" aria-label="Bar chart">
+            <div>1<i style="height:33%"></i>May</div>
+            <div>2<i style="height:67%" class="delay1"></i>Jun</div>
+            <div>1<i style="height:33%" class="delay2"></i>Jul</div>
+            <div>3<i style="height:100%" class="delay3"></i>Aug</div>
+            <div>2<i style="height:67%" class="delay4"></i>Sep</div>
+            <div>3<i style="height:100%" class="delay5"></i>Oct</div>
+          </div>
+        </section>
+
+        <section data-aos="fade-up" class="card">
+          <header><h3>Choose a room</h3></header>
+          <div class="imgs n3">
+            <figure>
+              <img src="assets/images/room-dining.webp" alt="Main room" loading="lazy">
+              <figcaption>Main room<a class="btn btn-sm" href="404.html"><i class="fa-solid fa-calendar-check" aria-hidden="true"></i> Book</a></figcaption>
+            </figure>
+            <figure>
+              <img src="assets/images/room-table-set.webp" alt="Set table" loading="lazy">
+              <figcaption>Set table<a class="btn btn-sm" href="404.html"><i class="fa-solid fa-calendar-check" aria-hidden="true"></i> Book</a></figcaption>
+            </figure>
+            <figure>
+              <img src="assets/images/room-bar.webp" alt="Bar" loading="lazy">
+              <figcaption>Bar<a class="btn btn-sm" href="404.html"><i class="fa-solid fa-calendar-check" aria-hidden="true"></i> Book</a></figcaption>
+            </figure>
+          </div>
+        </section>
+
+      </div><!-- /reservations -->
+
+      <!-- ======== FAVOURITES ======== -->
+      <div class="view-panel" data-panel="favourites" hidden>
+
+        <section data-aos="fade-up" class="card wide">
+          <header><h3>Dishes you love</h3></header>
+          <div class="imgs n4">
+            <figure>
+              <img src="assets/images/dum-biryani.webp" alt="Dum biryani" loading="lazy">
+              <figcaption>Dum biryani<a class="btn btn-sm" href="404.html"><i class="fa-solid fa-rotate-right" aria-hidden="true"></i> Reorder</a></figcaption>
+            </figure>
+            <figure>
+              <img src="assets/images/sea-bass.webp" alt="Pan-seared sea bass" loading="lazy">
+              <figcaption>Pan-seared sea bass<a class="btn btn-sm" href="404.html"><i class="fa-solid fa-rotate-right" aria-hidden="true"></i> Reorder</a></figcaption>
+            </figure>
+            <figure>
+              <img src="assets/images/scallop-dish.webp" alt="Hand-dived scallop" loading="lazy">
+              <figcaption>Hand-dived scallop<a class="btn btn-sm" href="404.html"><i class="fa-solid fa-rotate-right" aria-hidden="true"></i> Reorder</a></figcaption>
+            </figure>
+            <figure>
+              <img src="assets/images/chocolate-dessert.webp" alt="Chocolate sphere" loading="lazy">
+              <figcaption>Chocolate sphere<a class="btn btn-sm" href="404.html"><i class="fa-solid fa-rotate-right" aria-hidden="true"></i> Reorder</a></figcaption>
+            </figure>
+          </div>
+        </section>
+
+        <section data-aos="fade-up" data-aos-delay="80" class="card">
+          <header><h3>Most ordered</h3></header>
+          <div class="bars" role="img" aria-label="Bar chart">
+            <div>8<i style="height:100%"></i>Sea bass</div>
+            <div>6<i style="height:75%" class="delay1"></i>Biryani</div>
+            <div>5<i style="height:62.5%" class="delay2"></i>Scallop</div>
+            <div>4<i style="height:50%" class="delay3"></i>Sphere</div>
+            <div>3<i style="height:37.5%" class="delay4"></i>Paneer</div>
+          </div>
+        </section>
+
+        <section data-aos="fade-up" data-aos-delay="160" class="card">
+          <header><h3>Course preference</h3></header>
+          <div class="donut">
+            <svg viewBox="0 0 36 36" role="img" aria-label="Donut chart">
+              <circle class="c0" cx="18" cy="18" r="15.9155" stroke-dasharray="35 65" stroke-dashoffset="0"/>
+              <circle class="c1" cx="18" cy="18" r="15.9155" stroke-dasharray="40 60" stroke-dashoffset="-35"/>
+              <circle class="c2" cx="18" cy="18" r="15.9155" stroke-dasharray="25 75" stroke-dashoffset="-75"/>
+            </svg>
+            <ul>
+              <li><i class="k0"></i>Starters<b>35%</b></li>
+              <li><i class="k1"></i>Mains<b>40%</b></li>
+              <li><i class="k2"></i>Desserts<b>25%</b></li>
+            </ul>
+          </div>
+        </section>
+
+        <section data-aos="fade-up" class="card wide">
+          <header><h3>Saved wine pairings</h3></header>
+          <ul class="rows">
+            <li><div><h4>Chablis</h4><span>With sea bass</span></div><a class="tag" href="404.html">View</a></li>
+            <li><div><h4>Mosel Riesling</h4><span>With scallop</span></div><a class="tag" href="404.html">View</a></li>
+            <li><div><h4>Champagne brut</h4><span>With oysters</span></div><a class="tag" href="404.html">View</a></li>
+          </ul>
+        </section>
+
+      </div><!-- /favourites -->
+
+      <!-- ======== REWARDS ======== -->
+      <div class="view-panel" data-panel="rewards" hidden>
+
+        <section data-aos="fade-up" class="card wide">
+          <header><h3>Your tier</h3></header>
+          <div class="kpis">
+            <div><b>Gold</b><span>Tier</span></div>
+            <div><b>2,480</b><span>Points</span></div>
+            <div><b>520</b><span>To Platinum</span></div>
+            <div><b>3</b><span>Vouchers</span></div>
+          </div>
+        </section>
+
+        <section data-aos="fade-up" data-aos-delay="80" class="card">
+          <header><h3>Points earned</h3></header>
+          <svg class="chart" viewBox="0 0 300 110" preserveAspectRatio="none" role="img" aria-label="Line chart">
+            <polygon class="area" points="0,110 0,104 50,93.6 100,83.3 150,72.9 200,57.5 250,36.7 300,10 300,110"/>
+            <polyline class="ln" pathLength="1" points="0,104 50,93.6 100,83.3 150,72.9 200,57.5 250,36.7 300,10"/>
+          </svg>
+          <div class="xl"><span>Apr</span><span>May</span><span>Jun</span><span>Jul</span><span>Aug</span><span>Sep</span><span>Oct</span></div>
+        </section>
+
+        <section data-aos="fade-up" data-aos-delay="160" class="card">
+          <header><h3>Offers for you</h3></header>
+          <ul class="rows">
+            <li><div><h4>Complimentary dessert</h4><span>Valid till 30 Nov</span></div><a class="tag" href="404.html">Claim</a></li>
+            <li><div><h4>Wine pairing upgrade</h4><span>Tasting menu only</span></div><a class="tag" href="404.html">Claim</a></li>
+            <li><div><h4>Birthday table</h4><span>Free small sweets</span></div><a class="tag" href="404.html">Claim</a></li>
+          </ul>
+        </section>
+
+        <section data-aos="fade-up" class="card wide">
+          <header><h3>Upcoming events</h3></header>
+          <div class="imgs n2">
+            <figure>
+              <img src="assets/images/wine-cellar.webp" alt="Wine dinner, 21 Nov" loading="lazy">
+              <figcaption>Wine dinner, 21 Nov<a class="btn btn-sm" href="404.html"><i class="fa-solid fa-ticket" aria-hidden="true"></i> Join</a></figcaption>
+            </figure>
+            <figure>
+              <img src="assets/images/chef-meera.webp" alt="Chef's table, 5 Dec" loading="lazy">
+              <figcaption>Chef's table, 5 Dec<a class="btn btn-sm" href="404.html"><i class="fa-solid fa-ticket" aria-hidden="true"></i> Join</a></figcaption>
+            </figure>
+          </div>
+        </section>
+
+      </div><!-- /rewards -->
+
+    </div><!-- #view -->
+  </div>
+</div>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+<script src="assets/js/dashboard.js"></script>
+</body>
+</html>

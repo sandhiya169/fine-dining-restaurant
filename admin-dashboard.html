@@ -1,0 +1,335 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Admin Dashboard — Stackly</title>
+<meta name="robots" content="noindex">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Manrope:wght@300;400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css">
+<link rel="stylesheet" href="assets/css/style.css">
+<link rel="stylesheet" href="assets/css/dashboard.css">
+</head>
+<body data-role="admin">
+<div class="dash">
+  <aside class="side" id="side" aria-label="Dashboard menu">
+    <a href="admin-dashboard.html" class="logo"><img src="assets/images/logo.webp" alt="Stackly"></a>
+    <p class="who">Admin Dashboard</p>
+    <nav>
+      <button class="on" data-view="overview"><i class="fa-solid fa-chart-line" aria-hidden="true"></i>Overview</button>
+      <button data-view="bookings"><i class="fa-solid fa-calendar-days" aria-hidden="true"></i>Bookings</button>
+      <button data-view="kitchen"><i class="fa-solid fa-utensils" aria-hidden="true"></i>Kitchen &amp; Menu</button>
+      <button data-view="guests"><i class="fa-solid fa-users" aria-hidden="true"></i>Guests</button>
+    </nav>
+    <div class="user user-side"><span class="av" id="av-side">G</span><span id="email-side">Guest</span></div>
+    <div class="foot">
+      <a href="index.html"><i class="fa-solid fa-arrow-left" aria-hidden="true"></i>Back to Home</a>
+      <a href="login.html"><i class="fa-solid fa-right-from-bracket" aria-hidden="true"></i>Logout</a>
+    </div>
+  </aside>
+  <div class="scrim" id="scrim"></div>
+  <div class="main">
+    <header class="top">
+      <button class="mb" id="mb" aria-label="Open menu" aria-expanded="false"><i class="fa-solid fa-bars" aria-hidden="true"></i></button>
+      <h1 id="title">Overview</h1>
+      <div class="notif-wrap">
+        <button class="notif" id="notif" aria-label="Notifications" aria-haspopup="true">
+          <i class="fa-solid fa-bell" aria-hidden="true"></i>
+          <span class="badge" id="notif-count">4</span>
+        </button>
+        <div class="notif-panel" id="notif-panel" role="dialog" aria-label="Notifications" hidden>
+          <p class="notif-head">Notifications</p>
+          <ul>
+            <li><a href="404.html"><i class="fa-solid fa-calendar-check ok" aria-hidden="true"></i><div><strong>New booking — Rao, party of 4</strong><span>Tonight at 8:00 pm · Main room</span></div></a></li>
+            <li><a href="404.html"><i class="fa-solid fa-circle-exclamation wait" aria-hidden="true"></i><div><strong>Low stock: Hand-dived scallop</strong><span>Only 5 portions remaining</span></div></a></li>
+            <li><a href="404.html"><i class="fa-solid fa-circle-exclamation wait" aria-hidden="true"></i><div><strong>Low stock: Wild mushroom</strong><span>Only 4 portions remaining</span></div></a></li>
+            <li><a href="404.html"><i class="fa-solid fa-users brass" aria-hidden="true"></i><div><strong>38 new guests this week</strong><span>Up 12% from last week</span></div></a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="user"><span class="av" id="av">G</span><span id="email">Guest</span></div>
+    </header>
+
+    <div class="grid" id="view" aria-live="polite">
+
+      <!-- ======== OVERVIEW ======== -->
+      <div class="view-panel" data-panel="overview">
+
+        <section data-aos="fade-up" class="card wide">
+          <header><h3>Today</h3></header>
+          <div class="kpis">
+            <div><b>₹3.2L</b><span>Revenue</span></div>
+            <div><b>26/28</b><span>Seats filled</span></div>
+            <div><b>41</b><span>Bookings</span></div>
+            <div><b>4.9</b><span>Guest rating</span></div>
+          </div>
+        </section>
+
+        <section data-aos="fade-up" data-aos-delay="80" class="card">
+          <header><h3>Revenue this week (₹ lakh)</h3><a class="btn btn-sm" href="404.html"><i class="fa-solid fa-download" aria-hidden="true"></i> Export</a></header>
+          <svg class="chart" viewBox="0 0 300 110" preserveAspectRatio="none" role="img" aria-label="Line chart">
+            <polygon class="area" points="0,110 0,71.6 50,59.7 100,66.7 150,34.3 200,14.4 250,24.5 300,34.3 300,110"/>
+            <polyline class="ln" pathLength="1" points="0,71.6 50,59.7 100,66.7 150,34.3 200,14.4 250,24.5 300,34.3"/>
+          </svg>
+          <div class="xl"><span>Mon</span><span>Tue</span><span>Wed</span><span>Thu</span><span>Fri</span><span>Sat</span><span>Sun</span></div>
+        </section>
+
+        <section data-aos="fade-up" data-aos-delay="160" class="card">
+          <header><h3>Revenue by cuisine</h3></header>
+          <div class="donut">
+            <svg viewBox="0 0 36 36" role="img" aria-label="Donut chart">
+              <circle class="c0" cx="18" cy="18" r="15.9155" stroke-dasharray="48 52" stroke-dashoffset="0"/>
+              <circle class="c1" cx="18" cy="18" r="15.9155" stroke-dasharray="36 64" stroke-dashoffset="-48"/>
+              <circle class="c2" cx="18" cy="18" r="15.9155" stroke-dasharray="16 84" stroke-dashoffset="-84"/>
+            </svg>
+            <ul>
+              <li><i class="k0"></i>Indian<b>48%</b></li>
+              <li><i class="k1"></i>European<b>36%</b></li>
+              <li><i class="k2"></i>Wine &amp; bar<b>16%</b></li>
+            </ul>
+          </div>
+        </section>
+
+        <section data-aos="fade-up" class="card">
+          <header><h3>Covers per day</h3></header>
+          <div class="bars" role="img" aria-label="Bar chart">
+            <div>18<i style="height:64.3%"></i>Tue</div>
+            <div>22<i style="height:78.6%" class="delay1"></i>Wed</div>
+            <div>24<i style="height:85.7%" class="delay2"></i>Thu</div>
+            <div>28<i style="height:100%" class="delay3"></i>Fri</div>
+            <div>28<i style="height:100%" class="delay4"></i>Sat</div>
+            <div>26<i style="height:92.9%" class="delay5"></i>Sun</div>
+          </div>
+        </section>
+
+        <section data-aos="fade-up" data-aos-delay="80" class="card">
+          <header><h3>Live bookings</h3></header>
+          <ul class="rows">
+            <li><div><h4>Rao, party of 4</h4><span>8:00 pm, Main room</span></div><a class="tag" href="404.html">Seat</a></li>
+            <li><div><h4>Menon, party of 2</h4><span>8:30 pm, Counter</span></div><a class="tag" href="404.html">Seat</a></li>
+            <li><div><h4>Khan, party of 6</h4><span>9:00 pm, Terrace</span></div><a class="tag" href="404.html">Seat</a></li>
+          </ul>
+        </section>
+
+      </div><!-- /overview -->
+
+      <!-- ======== BOOKINGS ======== -->
+      <div class="view-panel" data-panel="bookings" hidden>
+
+        <section data-aos="fade-up" class="card wide">
+          <header><h3>Service tonight</h3></header>
+          <div class="kpis">
+            <div><b>41</b><span>Bookings</span></div>
+            <div><b>6</b><span>Waitlist</span></div>
+            <div><b>3</b><span>No-shows</span></div>
+            <div><b>92%</b><span>Occupancy</span></div>
+          </div>
+        </section>
+
+        <section data-aos="fade-up" data-aos-delay="80" class="card wide">
+          <header><h3>Reservations</h3><a class="btn btn-sm" href="404.html"><i class="fa-solid fa-calendar-plus" aria-hidden="true"></i> Add booking</a></header>
+          <div class="tw">
+            <table>
+              <thead><tr><th>Guest</th><th>Time</th><th>Party</th><th>Status</th><th></th></tr></thead>
+              <tbody>
+                <tr><td>Rao</td><td>8:00 pm</td><td>4</td><td><em class="ok">Confirmed</em></td><td><a class="tag" href="404.html">Edit</a></td></tr>
+                <tr><td>Menon</td><td>8:30 pm</td><td>2</td><td><em class="wait">Pending</em></td><td><a class="tag" href="404.html">Edit</a></td></tr>
+                <tr><td>Khan</td><td>9:00 pm</td><td>6</td><td><em class="ok">Confirmed</em></td><td><a class="tag" href="404.html">Edit</a></td></tr>
+                <tr><td>Iyer</td><td>9:30 pm</td><td>2</td><td><em>Cancelled</em></td><td><a class="tag" href="404.html">Edit</a></td></tr>
+              </tbody>
+            </table>
+          </div>
+        </section>
+
+        <section data-aos="fade-up" data-aos-delay="160" class="card">
+          <header><h3>Bookings by hour</h3></header>
+          <div class="bars" role="img" aria-label="Bar chart">
+            <div>6<i style="height:42.9%"></i>6:30</div>
+            <div>14<i style="height:100%" class="delay1"></i>7:30</div>
+            <div>12<i style="height:85.7%" class="delay2"></i>8:30</div>
+            <div>7<i style="height:50%" class="delay3"></i>9:30</div>
+            <div>2<i style="height:14.3%" class="delay4"></i>10:30</div>
+          </div>
+        </section>
+
+        <section data-aos="fade-up" class="card">
+          <header><h3>Booking status</h3></header>
+          <div class="donut">
+            <svg viewBox="0 0 36 36" role="img" aria-label="Donut chart">
+              <circle class="c0" cx="18" cy="18" r="15.9155" stroke-dasharray="70 30" stroke-dashoffset="0"/>
+              <circle class="c1" cx="18" cy="18" r="15.9155" stroke-dasharray="20 80" stroke-dashoffset="-70"/>
+              <circle class="c2" cx="18" cy="18" r="15.9155" stroke-dasharray="10 90" stroke-dashoffset="-90"/>
+            </svg>
+            <ul>
+              <li><i class="k0"></i>Confirmed<b>70%</b></li>
+              <li><i class="k1"></i>Pending<b>20%</b></li>
+              <li><i class="k2"></i>Cancelled<b>10%</b></li>
+            </ul>
+          </div>
+        </section>
+
+        <section data-aos="fade-up" data-aos-delay="80" class="card wide">
+          <header><h3>Dining rooms</h3></header>
+          <div class="imgs n3">
+            <figure>
+              <img src="assets/images/room-dining.webp" alt="Main room" loading="lazy">
+              <figcaption>Main room<a class="btn btn-sm" href="404.html"><i class="fa-solid fa-pen-to-square" aria-hidden="true"></i> Edit layout</a></figcaption>
+            </figure>
+            <figure>
+              <img src="assets/images/room-table-set.webp" alt="Chef's counter" loading="lazy">
+              <figcaption>Chef's counter<a class="btn btn-sm" href="404.html"><i class="fa-solid fa-pen-to-square" aria-hidden="true"></i> Edit layout</a></figcaption>
+            </figure>
+            <figure>
+              <img src="assets/images/room-bar.webp" alt="Bar" loading="lazy">
+              <figcaption>Bar<a class="btn btn-sm" href="404.html"><i class="fa-solid fa-pen-to-square" aria-hidden="true"></i> Edit layout</a></figcaption>
+            </figure>
+          </div>
+        </section>
+
+      </div><!-- /bookings -->
+
+      <!-- ======== KITCHEN ======== -->
+      <div class="view-panel" data-panel="kitchen" hidden>
+
+        <section data-aos="fade-up" class="card wide">
+          <header><h3>Kitchen today</h3></header>
+          <div class="kpis">
+            <div><b>86</b><span>Dishes sold</span></div>
+            <div><b>3</b><span>Low stock</span></div>
+            <div><b>14</b><span>Growers</span></div>
+            <div><b>2</b><span>Items off menu</span></div>
+          </div>
+        </section>
+
+        <section data-aos="fade-up" data-aos-delay="80" class="card wide">
+          <header><h3>Stock and pricing</h3><a class="btn btn-sm" href="404.html"><i class="fa-solid fa-plus" aria-hidden="true"></i> Add dish</a></header>
+          <div class="tw">
+            <table>
+              <thead><tr><th>Item</th><th>Stock</th><th>Price</th><th>Status</th></tr></thead>
+              <tbody>
+                <tr><td>Pan-seared sea bass</td><td>12</td><td>₹2,450</td><td><em class="ok">Good</em></td></tr>
+                <tr><td>Hand-dived scallop</td><td>5</td><td>₹1,850</td><td><em class="wait">Low</em></td></tr>
+                <tr><td>Dum biryani</td><td>30</td><td>₹1,450</td><td><em class="ok">Good</em></td></tr>
+                <tr><td>Wild mushroom</td><td>4</td><td>₹1,350</td><td><em class="wait">Low</em></td></tr>
+              </tbody>
+            </table>
+          </div>
+        </section>
+
+        <section data-aos="fade-up" data-aos-delay="160" class="card">
+          <header><h3>Top dishes tonight</h3></header>
+          <div class="bars" role="img" aria-label="Bar chart">
+            <div>22<i style="height:100%"></i>Sea bass</div>
+            <div>18<i style="height:81.8%" class="delay1"></i>Biryani</div>
+            <div>14<i style="height:63.6%" class="delay2"></i>Scallop</div>
+            <div>11<i style="height:50%" class="delay3"></i>Mushroom</div>
+            <div>9<i style="height:40.9%" class="delay4"></i>Sphere</div>
+          </div>
+        </section>
+
+        <section data-aos="fade-up" class="card">
+          <header><h3>Menu items</h3></header>
+          <div class="imgs n4">
+            <figure>
+              <img src="assets/images/sea-bass.webp" alt="Pan-seared sea bass" loading="lazy">
+              <figcaption>Pan-seared sea bass<a class="btn btn-sm" href="404.html"><i class="fa-solid fa-pen-to-square" aria-hidden="true"></i> Edit</a></figcaption>
+            </figure>
+            <figure>
+              <img src="assets/images/scallop-dish.webp" alt="Scallop" loading="lazy">
+              <figcaption>Scallop<a class="btn btn-sm" href="404.html"><i class="fa-solid fa-pen-to-square" aria-hidden="true"></i> Edit</a></figcaption>
+            </figure>
+            <figure>
+              <img src="assets/images/mushroom-dish.webp" alt="Mushroom royale" loading="lazy">
+              <figcaption>Mushroom royale<a class="btn btn-sm" href="404.html"><i class="fa-solid fa-pen-to-square" aria-hidden="true"></i> Edit</a></figcaption>
+            </figure>
+            <figure>
+              <img src="assets/images/chocolate-dessert.webp" alt="Chocolate sphere" loading="lazy">
+              <figcaption>Chocolate sphere<a class="btn btn-sm" href="404.html"><i class="fa-solid fa-pen-to-square" aria-hidden="true"></i> Edit</a></figcaption>
+            </figure>
+          </div>
+        </section>
+
+        <section data-aos="fade-up" data-aos-delay="80" class="card wide">
+          <header><h3>Prep list</h3></header>
+          <ul class="rows">
+            <li><div><h4>Broth clarification</h4><span>Start 10:00 am</span></div><a class="tag" href="404.html">Open</a></li>
+            <li><div><h4>Dumpling rolling</h4><span>Start 1:00 pm</span></div><a class="tag" href="404.html">Open</a></li>
+            <li><div><h4>Sea bass delivery check</h4><span>Before service</span></div><a class="tag" href="404.html">Open</a></li>
+          </ul>
+        </section>
+
+      </div><!-- /kitchen -->
+
+      <!-- ======== GUESTS ======== -->
+      <div class="view-panel" data-panel="guests" hidden>
+
+        <section data-aos="fade-up" class="card wide">
+          <header><h3>Guest base</h3></header>
+          <div class="kpis">
+            <div><b>1,240</b><span>Guests</span></div>
+            <div><b>38</b><span>New this week</span></div>
+            <div><b>212</b><span>Members</span></div>
+            <div><b>4.9</b><span>Average rating</span></div>
+          </div>
+        </section>
+
+        <section data-aos="fade-up" data-aos-delay="80" class="card">
+          <header><h3>New guests per month</h3><a class="btn btn-sm" href="404.html"><i class="fa-solid fa-download" aria-hidden="true"></i> Export</a></header>
+          <svg class="chart" viewBox="0 0 300 110" preserveAspectRatio="none" role="img" aria-label="Line chart">
+            <polygon class="area" points="0,110 0,63.3 50,47.6 100,57.1 150,28.6 200,9.5 250,18.1 300,4.8 300,110"/>
+            <polyline class="ln" pathLength="1" points="0,63.3 50,47.6 100,57.1 150,28.6 200,9.5 250,18.1 300,4.8"/>
+          </svg>
+          <div class="xl"><span>Apr</span><span>May</span><span>Jun</span><span>Jul</span><span>Aug</span><span>Sep</span><span>Oct</span></div>
+        </section>
+
+        <section data-aos="fade-up" data-aos-delay="160" class="card">
+          <header><h3>Guest types</h3></header>
+          <div class="donut">
+            <svg viewBox="0 0 36 36" role="img" aria-label="Donut chart">
+              <circle class="c0" cx="18" cy="18" r="15.9155" stroke-dasharray="55 45" stroke-dashoffset="0"/>
+              <circle class="c1" cx="18" cy="18" r="15.9155" stroke-dasharray="30 70" stroke-dashoffset="-55"/>
+              <circle class="c2" cx="18" cy="18" r="15.9155" stroke-dasharray="15 85" stroke-dashoffset="-85"/>
+            </svg>
+            <ul>
+              <li><i class="k0"></i>Returning<b>55%</b></li>
+              <li><i class="k1"></i>New<b>30%</b></li>
+              <li><i class="k2"></i>Corporate<b>15%</b></li>
+            </ul>
+          </div>
+        </section>
+
+        <section data-aos="fade-up" class="card">
+          <header><h3>VIP guests</h3></header>
+          <ul class="rows">
+            <li><div><h4>Anna R.</h4><span>Food &amp; Travel, 9 visits</span></div><a class="tag" href="404.html">Message</a></li>
+            <li><div><h4>James L.</h4><span>Member, 7 visits</span></div><a class="tag" href="404.html">Message</a></li>
+            <li><div><h4>Priya S.</h4><span>Member, 6 visits</span></div><a class="tag" href="404.html">Message</a></li>
+          </ul>
+        </section>
+
+        <section data-aos="fade-up" data-aos-delay="80" class="card">
+          <header><h3>Front of house</h3></header>
+          <div class="imgs n2">
+            <figure>
+              <img src="assets/images/chef-meera.webp" alt="Chef Meera Raghavan" loading="lazy">
+              <figcaption>Chef Meera Raghavan<a class="btn btn-sm" href="404.html"><i class="fa-solid fa-paper-plane" aria-hidden="true"></i> Message</a></figcaption>
+            </figure>
+            <figure>
+              <img src="assets/images/wine-cellar.webp" alt="Wine director Arjun Menon" loading="lazy">
+              <figcaption>Wine director Arjun Menon<a class="btn btn-sm" href="404.html"><i class="fa-solid fa-paper-plane" aria-hidden="true"></i> Message</a></figcaption>
+            </figure>
+          </div>
+        </section>
+
+      </div><!-- /guests -->
+
+    </div><!-- #view -->
+  </div>
+</div>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+<script src="assets/js/dashboard.js"></script>
+</body>
+</html>

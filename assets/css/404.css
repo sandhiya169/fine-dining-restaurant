@@ -1,0 +1,93 @@
+/* ===== 404 page — builds on style.css tokens (pine / brass / pearl) ===== */
+.nf{
+  min-height:100vh;min-height:100svh;
+  display:grid;place-items:center;
+  padding:clamp(2rem,6vw,4rem) var(--pad);
+  position:relative;overflow:hidden;text-align:center;
+  background:radial-gradient(ellipse at 50% 42%,rgba(194,160,97,.11),transparent 60%),var(--pine);
+}
+
+/* Arched window behind the content */
+.arch-bg{
+  position:absolute;bottom:0;left:0;right:0;margin-inline:auto;
+  width:min(72vw,640px);height:88%;
+  border:1px solid rgba(194,160,97,.22);border-bottom:0;
+  border-radius:999px 999px 0 0;
+  pointer-events:none;
+}
+.arch-bg::after{
+  content:"";position:absolute;inset:14px 14px 0;
+  border:1px solid rgba(194,160,97,.12);border-bottom:0;
+  border-radius:999px 999px 0 0;
+}
+
+.nf-inner{
+  position:relative;z-index:2;
+  display:flex;flex-direction:column;align-items:center;
+  width:100%;max-width:640px;
+}
+.nf .kicker{margin-bottom:1rem;font-style:italic;font-family:var(--serif);font-size:1.25rem}
+
+/* 4 [plate] 4 */
+.code{
+  display:flex;align-items:center;justify-content:center;
+  gap:.02em;
+  font:500 clamp(6.5rem,27vw,17rem)/.9 var(--serif);
+  color:var(--pearl);
+  margin-bottom:clamp(1rem,3vw,1.8rem);
+}
+.dg{display:block;letter-spacing:-.02em}
+.plate{
+  width:.78em;height:.78em;flex:none;
+  color:var(--brass);overflow:visible;
+}
+.plate .draw{stroke-dasharray:1;stroke-dashoffset:0}
+.plate .ring{
+  transform-box:fill-box;transform-origin:center;
+  animation:spin 70s linear infinite;
+}
+@keyframes spin{to{transform:rotate(360deg)}}
+
+/* Headline — overrides the large global h1 */
+.nf h1.title{
+  font-size:clamp(2.2rem,6.5vw,4.4rem);
+  line-height:1.05;margin:0 0 1.2rem;
+}
+.nf h1.title em{padding-left:0}
+
+.nf .msg{max-width:46ch;margin-inline:auto}
+.cta{
+  display:flex;flex-wrap:wrap;justify-content:center;align-items:center;
+  gap:1.2rem 2rem;margin-top:2rem;
+}
+.cta .btn{font:500 1rem var(--sans);line-height:1.7}
+.cta .btn-ghost{background:transparent;color:var(--pearl);border:1px solid var(--brass)}
+.cta .btn-ghost:hover{background:var(--brass);color:var(--ink)}
+.help{
+  margin-top:clamp(2rem,5vw,3rem);padding-top:1.4rem;
+  border-top:1px solid rgba(194,160,97,.3);
+  font-size:.88rem;max-width:42ch;
+}
+.help a{color:var(--brass);border-bottom:1px solid rgba(194,160,97,.5);overflow-wrap:anywhere}
+.help a:hover{border-color:var(--brass)}
+
+/* ===== Responsive ===== */
+@media (max-width:860px){
+  .arch-bg{width:88vw;height:80%}
+}
+@media (max-width:480px){
+  .nf .kicker{font-size:1.1rem}
+  .cta{flex-direction:column;gap:1.2rem}
+  .cta .btn{width:100%;max-width:260px;text-align:center}
+}
+@media (max-width:340px){
+  .nf{padding-inline:1rem}
+  .nf .msg{font-size:.95rem}
+}
+@media (max-height:520px) and (orientation:landscape){
+  .nf{padding-block:5rem 2rem}
+  .code{font-size:clamp(5rem,18vw,9rem)}
+}
+@media (prefers-reduced-motion:reduce){
+  .plate .ring{animation:none}
+}

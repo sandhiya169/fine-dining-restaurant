@@ -1,0 +1,49 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Sign in — Stackly</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Manrope:wght@300;400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css">
+<link rel="stylesheet" href="assets/css/style.css">
+<link rel="stylesheet" href="assets/css/auth.css">
+</head>
+<body>
+<main class="auth">
+  <aside data-aos="fade" data-aos-duration="1200" class="art art-login" style="background-image: url('assets/images/hero-evening-dining.webp');">
+    <a href="index.html" class="logo"><img src="assets/images/logo.webp" alt="Stackly"></a>
+    <p class="q">“If a sauce needs an explanation, it isn’t finished.”</p>
+  </aside>
+  <section class="panel">
+    <div class="box">
+      <a href="index.html" class="logo m-logo"><img src="assets/images/logo.webp" alt="Stackly"></a>
+      <h1 data-aos="fade-up">Welcome back.</h1>
+      <p data-aos="fade-up" data-aos-delay="80">Sign in to manage your reservations.</p>
+      <form data-aos="fade-up" data-aos-delay="160" id="auth" data-mode="login" novalidate>
+        <div class="seg" role="radiogroup" aria-label="Sign in as">
+          <label><input type="radio" name="role" value="user" checked><span>User</span></label>
+          <label><input type="radio" name="role" value="admin"><span>Admin</span></label>
+        </div>
+        <label class="f">Email<input type="email" name="email" autocomplete="email" placeholder="you@example.com"><small class="err"></small></label>
+        <label class="f">Password<span class="pw"><input type="password" name="password" autocomplete="current-password"><button type="button" class="eye" aria-label="Show password"><i class="fa-regular fa-eye"></i></button></span><small class="err"></small></label>
+        <a class="forgot" href="404.html">Forgot password?</a>
+        <button class="btn" type="submit"><i class="fa-solid fa-right-to-bracket" aria-hidden="true"></i> Sign in</button>
+        <p class="note" role="status"></p>
+      </form>
+      <p data-aos="fade-up" data-aos-delay="240" class="or"><span>or continue with</span></p>
+      <div data-aos="fade-up" data-aos-delay="320" class="alt">
+        <a href="404.html" class="btn-alt"><i class="fa-brands fa-google" aria-hidden="true"></i>Google</a>
+        <a href="404.html" class="btn-alt"><i class="fa-brands fa-apple" aria-hidden="true"></i>Apple</a>
+      </div>
+      <p data-aos="fade-up" data-aos-delay="400" class="sw">New here? <a href="signup.html">Create an account</a></p>
+    </div>
+  </section>
+</main>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+<script src="assets/js/auth.js"></script>
+</body>
+</html>
