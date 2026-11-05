@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="UTF-8">
@@ -13,12 +13,25 @@
 <link rel="stylesheet" href="assets/css/auth.css">
 </head>
 <body>
+
 <main class="auth">
+  <!-- Left: image panel -->
   <aside data-aos="fade" data-aos-duration="1200" class="art art-login" style="background-image: url('assets/images/hero-evening-dining.webp');">
-    <a href="index.html" class="logo"><img src="assets/images/logo.webp" alt="Stackly"></a>
-    <p class="q">“If a sauce needs an explanation, it isn’t finished.”</p>
+    <p class="q">"If a sauce needs an explanation, it isn't finished."</p>
   </aside>
+
+  <!-- Right: form panel -->
   <section class="panel">
+    <!-- Panel-only topbar -->
+    <div class="panel-topbar">
+      <a href="index.html" class="panel-logo">
+        <img src="assets/images/logo.webp" alt="Stackly">
+      </a>
+      <a href="index.html" class="auth-back-btn">
+        <i class="fa-solid fa-arrow-left" aria-hidden="true"></i> Back to Home
+      </a>
+    </div>
+
     <div class="box">
       <a href="index.html" class="logo m-logo"><img src="assets/images/logo.webp" alt="Stackly"></a>
       <h1 data-aos="fade-up">Welcome back.</h1>
@@ -29,8 +42,14 @@
           <label><input type="radio" name="role" value="admin"><span>Admin</span></label>
         </div>
         <label class="f">Email<input type="email" name="email" autocomplete="email" placeholder="you@example.com"><small class="err"></small></label>
-        <label class="f">Password<span class="pw"><input type="password" name="password" autocomplete="current-password"><button type="button" class="eye" aria-label="Show password"><i class="fa-regular fa-eye"></i></button></span><small class="err"></small></label>
-        <a class="forgot" href="404.html">Forgot password?</a>
+        <label class="f">Password<span class="pw"><input type="password" name="password" autocomplete="current-password" placeholder="••••••••"><button type="button" class="eye" aria-label="Show password"><i class="fa-regular fa-eye"></i></button></span><small class="err"></small></label>
+        <div class="remember-row">
+          <label class="remember-label">
+            <input type="checkbox" name="remember">
+            <span>Remember me</span>
+          </label>
+          <a class="forgot" href="404.html">Forgot password?</a>
+        </div>
         <button class="btn" type="submit"><i class="fa-solid fa-right-to-bracket" aria-hidden="true"></i> Sign in</button>
         <p class="note" role="status"></p>
       </form>
@@ -43,6 +62,7 @@
     </div>
   </section>
 </main>
+
 <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
 <script src="assets/js/auth.js"></script>
 </body>

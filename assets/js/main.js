@@ -307,9 +307,9 @@
       input.focus();
       return;
     }
-    note.textContent = '';
+    note.textContent = 'Thank you — you\'re subscribed!';
+    note.style.color = 'var(--brass)';
     e.target.reset();
-    window.location.href = '404.html';
   });
 
   addEventListener('load', () => { ScrollTrigger.refresh(); AOS.refresh(); });

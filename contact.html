@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 
 <head>
@@ -448,17 +448,17 @@
                 </ul>
             </div>
             <div data-aos="fade-up" data-aos-delay="100" data-aos-offset="0">
-                <h4>Explore</h4>
+                <h4>Quick Links</h4>
                 <ul>
-                    <li><a href="index.html">Home</a></li>
-                    <li><a href="about.html">About Us</a></li>
-                    <li><a href="menu.html">Menu</a></li>
-                    <li><a href="blog.html">Blog</a></li>
-                    <li><a href="contact.html">Contact</a></li>
+                    <li><i class="fa-solid fa-chevron-right" aria-hidden="true"></i><a href="index.html">Home</a></li>
+                    <li><i class="fa-solid fa-chevron-right" aria-hidden="true"></i><a href="about.html">About Us</a></li>
+                    <li><i class="fa-solid fa-chevron-right" aria-hidden="true"></i><a href="menu.html">Menu</a></li>
+                    <li><i class="fa-solid fa-chevron-right" aria-hidden="true"></i><a href="blog.html">Blog</a></li>
+                    <li><i class="fa-solid fa-chevron-right" aria-hidden="true"></i><a href="contact.html">Contact</a></li>
                 </ul>
             </div>
             <div data-aos="fade-up" data-aos-delay="200" data-aos-offset="0">
-                <h4>Visit</h4>
+                <h4>Visit Us</h4>
                 <address>
         <div class="vi"><i class="fa-solid fa-location-dot" aria-hidden="true"></i><span>Salem, Tamil Nadu,<br> India.</span></div>
         <div class="vi"><i class="fa-regular fa-clock" aria-hidden="true"></i><span>Tuesday – Sunday, 6:30 – 11 pm</span></div>
@@ -466,13 +466,17 @@
         <div class="vi"><i class="fa-regular fa-envelope" aria-hidden="true"></i><a href="404.html">info@thestackly.com</a></div>
       </address>
             </div>
-            <div data-aos="fade-up" data-aos-delay="300" data-aos-offset="0">
+            <div data-aos="fade-up" data-aos-delay="300" data-aos-offset="0" class="foot-news">
                 <h4>Seasonal news</h4>
                 <p>New menus, wine dinners and openings, a few times a year.</p>
-                <form class="news" id="news">
-                    <input type="text" inputmode="email" placeholder="Your email address" aria-label="Email address"
-                        autocomplete="email">
-                    <button type="submit"><i class="fa-solid fa-paper-plane" aria-hidden="true"></i> Subscribe</button>
+                <form class="news" id="news" novalidate>
+                    <div class="news-row">
+                        <label class="sr" for="newsEmail">Email address</label>
+                        <input id="newsEmail" type="email" placeholder="you@email.com" aria-label="Email address" autocomplete="email" required>
+                        <button type="submit" class="news-btn" aria-label="Subscribe">
+                            <i class="fa-solid fa-arrow-right" aria-hidden="true"></i>
+                        </button>
+                    </div>
                 </form>
                 <p class="note" id="newsNote" role="status"></p>
             </div>

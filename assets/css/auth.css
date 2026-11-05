@@ -49,17 +49,14 @@ body {
 }
 
 .art .logo {
-  position: static;
-  align-self: flex-start;
-  font-size: 2rem;
-  margin-bottom: auto
+  display: none
 }
 
 .art .logo img,
 .m-logo img {
   height: 2.6rem;
   width: auto;
-  display: block;
+  display: none;
   object-fit: contain
 }
 
@@ -92,16 +89,18 @@ body {
 }
 
 .panel {
-  display: grid;
-  place-items: center;
-  padding: 3rem var(--pad);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-bottom: 3rem;
   min-height: 100vh;
   min-height: 100svh
 }
 
 .box {
   width: 100%;
-  max-width: 440px;
+  max-width: 540px;
+  padding: 2.5rem clamp(1.25rem, 4vw, 3rem);
   animation: rise .9s .1s both
 }
 
@@ -121,11 +120,125 @@ body {
   margin-bottom: 1.6rem
 }
 
+/* ===== Panel topbar (right side only) ===== */
+.panel-topbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1.2rem clamp(1.25rem, 4vw, 3rem);
+  border-bottom: 1px solid rgba(237, 239, 234, .1);
+  width: 100%
+}
+
+.panel-logo img {
+  height: 2rem;
+  width: auto;
+  display: block;
+  object-fit: contain
+}
+
+.auth-back-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: .5rem;
+  font-family: var(--sans);
+  font-size: .85rem;
+  font-weight: 500;
+  color: var(--pearl);
+  padding: .45rem 1.1rem;
+  border: 1px solid rgba(237, 239, 234, .3);
+  border-radius: 99px;
+  transition: border-color .2s, color .2s, background .2s
+}
+
+.auth-back-btn i {
+  font-size: .72rem;
+  transition: transform .2s
+}
+
+.auth-back-btn:hover {
+  border-color: var(--brass);
+  color: var(--brass);
+  background: rgba(194, 160, 97, .08)
+}
+
+.auth-back-btn:hover i {
+  transform: translateX(-3px)
+}
+
+/* ===== Remember me row ===== */
+.remember-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem
+}
+
+.remember-label {
+  display: flex !important;
+  align-items: center;
+  gap: .5rem;
+  font-size: .85rem;
+  color: var(--muted);
+  cursor: pointer;
+  font-weight: 400
+}
+
+.remember-label input[type="checkbox"] {
+  width: 15px !important;
+  height: 15px !important;
+  min-width: 15px;
+  border: 1px solid rgba(237, 239, 234, .35) !important;
+  border-bottom: 1px solid rgba(237, 239, 234, .35) !important;
+  border-radius: 4px !important;
+  background: rgba(237, 239, 234, .07) !important;
+  accent-color: var(--brass);
+  cursor: pointer;
+  padding: 0 !important
+}
+
+.remember-label span {
+  line-height: 1
+}
+
+/* ===== Form fields ===== */
 .box form {
+  display: grid;
+  gap: 1.1rem;
   border: 0;
   border-radius: 0;
   padding: 0;
-  gap: 1.1rem
+  background: transparent;
+  backdrop-filter: none
+}
+
+.box .f input,
+.box .f .pw input {
+  background: rgba(237, 239, 234, .07) !important;
+  border: 1px solid rgba(237, 239, 234, .2) !important;
+  border-bottom: 1px solid rgba(237, 239, 234, .2) !important;
+  border-radius: 8px !important;
+  color: var(--pearl) !important;
+  font: inherit !important;
+  padding: .72rem 1rem !important;
+  width: 100%;
+  transition: border-color .2s, background .2s
+}
+
+.box .f input:focus,
+.box .f .pw input:focus {
+  outline: none !important;
+  border-color: rgba(194, 160, 97, .7) !important;
+  background: rgba(194, 160, 97, .05) !important
+}
+
+.box .f input::placeholder {
+  color: rgba(237, 239, 234, .3)
+}
+
+/* password input right padding for the eye btn */
+.box .f .pw input {
+  padding-right: 2.6rem !important
 }
 
 .seg {
