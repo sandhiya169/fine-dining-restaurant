@@ -1,4 +1,4 @@
-/* About page – builds on style.css (tokens, header, footer, buttons) */
+/* About page */
 .light {
   background: var(--pearl);
   color: var(--ink)
@@ -12,7 +12,6 @@ section[id] {
   scroll-margin-top: 90px
 }
 
-/* Sub-header bar: full-width strip sitting directly below the fixed nav */
 .a-subheader {
   position: relative;
   z-index: 10;
@@ -35,11 +34,11 @@ section[id] {
 }
 
 .a-kicker {
-  display: inline-flex;
+  display: flex;
   align-items: center;
   gap: .8rem;
-  margin: 0;
-  max-width: none;
+  margin: 0 0 1rem;
+  max-width: fit-content;
   font-size: .74rem;
   font-weight: 500;
   letter-spacing: .24em;
@@ -50,8 +49,17 @@ section[id] {
 .a-kicker::before {
   content: "";
   width: 38px;
+  flex-shrink: 0;
   height: 1px;
   background: var(--brass)
+}
+
+.light .a-kicker {
+  color: #7a5f2b
+}
+
+.light .a-kicker::before {
+  background: #7a5f2b
 }
 
 .crumbs {
@@ -179,7 +187,7 @@ section[id] {
   object-fit: cover
 }
 
-/* 2 Story: timeline whose line draws as you scroll, each moment paired with a photo */
+/* 2 Story: timeline */
 .story {
   background: var(--pine-2);
   border-top: 1px solid rgba(194, 160, 97, .25)
@@ -343,7 +351,7 @@ section[id] {
   filter: none
 }
 
-/* 3 Principles: staggered panels */
+/* 3 Principles */
 .pr-grid {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
@@ -442,7 +450,7 @@ section[id] {
   color: var(--brass)
 }
 
-/* 5 Sourcing: each grower is a delivery slip, the big number is the distance */
+/* 5 Sourcing */
 .src .grid-2 {
   grid-template-columns: 5fr 7fr;
   gap: clamp(2rem, 6vw, 5rem);
@@ -525,7 +533,7 @@ section[id] {
   color: var(--muted)
 }
 
-/* ruler: ticks every 10 km, 0 to 60 km, brass marker shows where the farm is */
+/* ruler */
 .gbar {
   position: relative;
   display: block;
@@ -575,7 +583,7 @@ section[id] {
   box-shadow: 0 0 0 4px rgba(194, 160, 97, .2)
 }
 
-/* 6 Awards: medallions – enhanced */
+/* 6 Awards */
 .awards-sec {
   overflow: hidden;
   position: relative
@@ -593,6 +601,12 @@ section[id] {
 .awards-header {
   text-align: center;
   margin-bottom: 3.5rem
+}
+
+.awards-header .a-kicker {
+  justify-content: center;
+  margin-inline: auto;
+  margin-bottom: 1.2rem
 }
 
 .awards-label {
@@ -713,7 +727,7 @@ section[id] {
   background: radial-gradient(circle at 40% 35%, rgba(194,160,97,.14) 0%, transparent 65%)
 }
 
-/* FA icon (replaces SVG) */
+/* FA icon */
 .m-icon {
   width: clamp(2.2rem, 4vw, 2.8rem);
   height: clamp(2.2rem, 4vw, 2.8rem);
@@ -846,6 +860,11 @@ section[id] {
   margin-inline: auto;
   font-size: clamp(1.8rem, 4.5vw, 3.8rem);
   color: var(--ink)
+}
+
+.a-cta .a-kicker {
+  margin-inline: auto;
+  justify-content: center
 }
 
 .a-cta p {

@@ -1,4 +1,4 @@
-/* ===== 404 page — builds on style.css tokens (pine / brass / pearl) ===== */
+/* ===== 404 page ===== */
 .nf{
   min-height:100vh;min-height:100svh;
   display:grid;place-items:center;
@@ -7,7 +7,6 @@
   background:radial-gradient(ellipse at 50% 42%,rgba(194,160,97,.11),transparent 60%),var(--pine);
 }
 
-/* Arched window behind the content */
 .arch-bg{
   position:absolute;bottom:0;left:0;right:0;margin-inline:auto;
   width:min(72vw,640px);height:88%;
@@ -28,7 +27,6 @@
 }
 .nf .kicker{margin-bottom:1rem;font-style:italic;font-family:var(--serif);font-size:1.25rem}
 
-/* 4 [plate] 4 */
 .code{
   display:flex;align-items:center;justify-content:center;
   gap:.02em;
@@ -48,7 +46,6 @@
 }
 @keyframes spin{to{transform:rotate(360deg)}}
 
-/* Headline — overrides the large global h1 */
 .nf h1.title{
   font-size:clamp(2.2rem,6.5vw,4.4rem);
   line-height:1.05;margin:0 0 1.2rem;

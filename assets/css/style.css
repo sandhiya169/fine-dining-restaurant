@@ -1,11 +1,8 @@
 /* ===== Tokens: three primary colours ===== */
 :root {
   --pine: #0E2622;
-  /* deep pine green  – primary surface */
   --brass: #C2A061;
-  /* antique brass    – accent */
   --pearl: #EDEFEA;
-  /* cool pearl       – light surface / text */
   --pine-2: #16342F;
   --ink: #0E2622;
   --muted: rgba(237, 239, 234, .68);
@@ -125,7 +122,6 @@ p {
   padding-bottom: 2px
 }
 
-/* ===== Nav ===== */
 .nav {
   position: fixed;
   inset: 0 0 auto;
@@ -270,7 +266,7 @@ p {
   transform: rotate(-45deg)
 }
 
-/* ===== 1 Hero: full-bleed cover, centred headline, glass fact bar ===== */
+/* ===== 1 Hero ===== */
 .kicker {
   color: var(--brass);
   margin-bottom: 1.5rem
@@ -385,7 +381,6 @@ h1 em {
   margin: 0
 }
 
-/* taller line boxes so descenders (y, comma) are never clipped by the reveal mask */
 .hero .line {
   padding-bottom: .16em;
   margin-bottom: -.1em
@@ -396,7 +391,6 @@ h1 em {
   margin-top: clamp(1.5rem, 3.5vh, 2.5rem)
 }
 
-/* glass fact bar */
 .hero-facts {
   list-style: none;
   display: grid;
@@ -440,7 +434,6 @@ h1 em {
   text-wrap: balance
 }
 
-/* ===== 2 Marquee ===== */
 .marquee {
   border-block: 1px solid rgba(194, 160, 97, .35);
   overflow: hidden;
@@ -472,7 +465,6 @@ h1 em {
   }
 }
 
-/* ===== 3 Philosophy ===== */
 .ph-wrap {
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -480,7 +472,6 @@ h1 em {
   align-items: center
 }
 
-/* Left: image composition */
 .ph-imgs {
   position: relative;
   height: clamp(440px, 62vw, 560px)
@@ -532,7 +523,6 @@ h1 em {
   transform: scale(1.07)
 }
 
-/* floating label */
 .ph-tag {
   position: absolute;
   left: 1.2rem;
@@ -549,7 +539,6 @@ h1 em {
   backdrop-filter: blur(6px)
 }
 
-/* Right: body copy */
 .ph-body {
   display: flex;
   flex-direction: column;
@@ -557,9 +546,10 @@ h1 em {
 }
 
 .ph-kicker {
-  display: inline-flex;
+  display: flex;
   align-items: center;
   gap: .8rem;
+  max-width: fit-content;
   font: 500 .72rem/1 var(--sans);
   letter-spacing: .22em;
   text-transform: uppercase;
@@ -570,8 +560,17 @@ h1 em {
 .ph-kicker::before {
   content: "";
   width: 32px;
+  flex-shrink: 0;
   height: 1px;
   background: var(--brass)
+}
+
+.light .ph-kicker {
+  color: #7a5f2b
+}
+
+.light .ph-kicker::before {
+  background: #7a5f2b
 }
 
 .ph-body h2 {
@@ -611,7 +610,6 @@ h1 em {
   transform: translateX(3px)
 }
 
-/* Stats */
 .stats {
   display: flex;
   gap: 0;
@@ -650,7 +648,6 @@ h1 em {
   color: var(--muted)
 }
 
-/* ===== 4 Signatures: pearl band ===== */
 .signatures {
   background: var(--pearl);
   color: var(--ink)
@@ -660,7 +657,6 @@ h1 em {
   color: rgba(14, 38, 34, .7)
 }
 
-/* Signature plates: pick a kitchen, point at a dish, the plate appears beside the list */
 .sig-head {
   display: flex;
   flex-wrap: wrap;
@@ -764,7 +760,6 @@ h1 em {
   white-space: nowrap
 }
 
-/* the plate: every row owns a photo, only the chosen one is shown, in the space beside the list */
 .dishes img {
   position: absolute;
   left: 0;
@@ -796,7 +791,6 @@ h1 em {
   margin-top: 1rem
 }
 
-/* ===== 5 Tasting menu: responsive grid ===== */
 .tasting {
   padding-block: clamp(4.5rem, 10vw, 8rem)
 }
@@ -904,7 +898,6 @@ h1 em {
     grid-template-columns: repeat(4, 1fr)
   }
 
-  /* 10 cards in 4 cols → last 2 cards each span 2 to fill the row */
   .courses article:nth-last-child(2) {
     grid-column: span 2
   }
@@ -919,7 +912,6 @@ h1 em {
     grid-template-columns: repeat(3, 1fr)
   }
 
-  /* 10 cards in 3 cols → last card spans 3 */
   .courses article:nth-last-child(2) {
     grid-column: span 1
   }
@@ -935,7 +927,6 @@ h1 em {
     gap: 1rem
   }
 
-  /* 10 cards in 2 cols → even, no fix needed */
   .courses article:nth-last-child(2),
   .courses article:last-child {
     grid-column: span 1
@@ -948,7 +939,6 @@ h1 em {
   }
 }
 
-/* ===== 6 Chef ===== */
 .chef {
   background: var(--pine-2);
   overflow: hidden
@@ -961,7 +951,6 @@ h1 em {
   align-items: center
 }
 
-/* Left: image column */
 .chef-img-col {
   position: relative
 }
@@ -986,7 +975,6 @@ h1 em {
   transform: scale(1.05)
 }
 
-/* Floating credential badge */
 .chef-credential {
   position: absolute;
   right: -1.5rem;
@@ -1013,7 +1001,6 @@ h1 em {
   color: var(--muted);
 }
 
-/* Right: body */
 .chef-body {
   display: flex;
   flex-direction: column;
@@ -1046,7 +1033,6 @@ h1 em {
   line-height: 1.8
 }
 
-/* Fact list */
 .chef-facts {
   list-style: none;
   display: flex;
@@ -1081,7 +1067,6 @@ blockquote {
   max-width: 32ch
 }
 
-/* Link */
 .chef-link {
   display: inline-flex;
   align-items: center;
@@ -1143,7 +1128,6 @@ blockquote {
   }
 }
 
-/* ===== 7 Gallery – editorial split + scroll strip ===== */
 .gallery {
   --room-pad-x: clamp(2rem, 4vw, 4rem);
   --room-pad-y: clamp(2rem, 4vw, 3rem);
@@ -1156,7 +1140,6 @@ blockquote {
   overflow: hidden;
 }
 
-/* Left panel */
 .room-panel {
   display: flex;
   align-items: center;
@@ -1278,14 +1261,12 @@ blockquote {
   transform: translateX(4px);
 }
 
-/* Right: horizontal auto-scroll gallery */
 .room-gallery {
   display: flex;
   gap: 1rem;
   overflow-x: auto;
   -webkit-overflow-scrolling: touch;
   scrollbar-width: none;
-  /* same top/bottom padding as the text panel, and the same gap from the right edge as the text has on the left */
   padding: var(--room-pad-y) 0;
   margin-right: var(--room-pad-x);
   align-items: stretch;
@@ -1300,7 +1281,6 @@ blockquote {
 .rg-item {
   flex: none;
   width: 260px;
-  /* stretch to fill whatever height the row is */
   align-self: stretch;
   border-radius: 10px;
   overflow: hidden;
@@ -1347,11 +1327,10 @@ blockquote {
   transform: translateY(0);
 }
 
-/* Drag-to-scroll via JS */
 .room-gallery.is-dragging {
   scroll-behavior: auto;
 }
-/* pause auto-scroll on hover */
+
 .room-gallery:hover {
   animation-play-state: paused;
 }
@@ -1409,10 +1388,8 @@ blockquote {
   .rg-item { height: 320px; }
 }
 
-/* keep old mosaic styles scoped */
 .mosaic { display: none }
 
-/* ===== 8 Cellar: a wine label laid over the photo ===== */
 .cellar-stage {
   display: grid;
   grid-template-columns: 1.4fr 1fr;
@@ -1457,6 +1434,16 @@ blockquote {
   font-size: .7rem;
   letter-spacing: .3em;
   color: #7a5f2b
+}
+
+.cellar-label .ph-kicker {
+  justify-content: center;
+  margin-inline: auto;
+  color: #7a5f2b
+}
+
+.cellar-label .ph-kicker::before {
+  background: #7a5f2b
 }
 
 .cellar-label h2 {
@@ -1607,7 +1594,6 @@ blockquote {
   pointer-events: auto
 }
 
-/* Stars */
 .rev-stars {
   display: flex;
   gap: .3rem;
@@ -1620,7 +1606,6 @@ blockquote {
   font-size: .85rem
 }
 
-/* Quote */
 .reviews blockquote {
   font: italic 400 clamp(1.4rem, 3vw, 2.4rem)/1.4 var(--serif);
   color: var(--ink);
@@ -1628,7 +1613,6 @@ blockquote {
   max-width: 30ch
 }
 
-/* Attribution */
 .reviews figcaption {
   display: flex;
   align-items: center;
@@ -1648,7 +1632,6 @@ blockquote {
   border-left: 1px solid rgba(14,38,34,.2)
 }
 
-/* Bottom nav: dots + arrows */
 .rev-nav {
   display: flex;
   align-items: center;
@@ -1775,7 +1758,6 @@ blockquote {
   padding-block: clamp(5rem, 10vw, 9rem)
 }
 
-/* full-bleed background image with dark overlay */
 .reserve-bg {
   position: absolute;
   inset: 0;
@@ -1805,7 +1787,6 @@ blockquote {
   align-items: center
 }
 
-/* Left: info column */
 .reserve-info {
   color: var(--pearl)
 }
@@ -1848,7 +1829,6 @@ blockquote {
   border-color: var(--brass)
 }
 
-/* Details list */
 .reserve-details {
   list-style: none;
   display: flex;
@@ -1913,7 +1893,6 @@ blockquote {
   font-size: .7rem
 }
 
-/* Form — unchanged internally, just update the card styling */
 form {
   display: grid;
   gap: 1.2rem;
@@ -2347,7 +2326,6 @@ label.bad select {
   }
 }
 
-/* Hero: small screens — facts become a stacked list, CTAs centred */
 @media (max-width:640px) {
   .hero {
     padding-top: clamp(5.25rem, 9vh, 6.5rem)
@@ -2401,7 +2379,6 @@ label.bad select {
   }
 }
 
-/* Short desktop windows: keep the calls to action above the fold */
 @media (max-height:600px) and (min-width:861px) {
   .hero {
     padding-top: 6.5rem;
@@ -2417,14 +2394,12 @@ label.bad select {
   }
 }
 
-/* Landscape phones */
 @media (max-height:480px) and (max-width:860px) {
   .hero h1 {
     font-size: clamp(2rem, 10vh, 3rem)
   }
 }
 
-/* No nav animation while the viewport is being resized / crossing the breakpoint */
 .no-nav-anim #menu,
 .no-nav-anim .burger span {
   transition: none !important
@@ -2552,7 +2527,6 @@ label.bad select {
 }
 }
 
-/* ===== Preloader (shown 1–2 s on the five main pages) ===== */
 html.is-loading {
   overflow: hidden
 }
@@ -2566,7 +2540,6 @@ html.is-loading {
   background: var(--pine);
   opacity: 1;
   visibility: visible;
-  /* no-JS safety net: never block the page for more than 2.5 s */
   animation: preFallback .01s linear 2.5s forwards
 }
 

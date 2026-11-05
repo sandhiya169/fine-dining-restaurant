@@ -3,8 +3,8 @@
   const $ = (s, c = document) => c.querySelector(s);
   const $$ = (s, c = document) => [...c.querySelectorAll(s)];
   const reduced = matchMedia('(prefers-reduced-motion: reduce)').matches;
-  /* ---------- Preloader: visible 1–2 s, then fades out ---------- */
-  let heroTL; /* hero entrance timeline starts paused and plays once the preloader is gone */
+
+  let heroTL; 
   const preEl = $('#preloader');
   const preDone = new Promise(resolve => {
     if (!preEl) return resolve();
@@ -19,14 +19,14 @@
       setTimeout(() => preEl.remove(), 1000);
       setTimeout(resolve, 350);
     };
-    /* performance.now() counts from navigation start: never shorter than 1 s, never longer than 2 s */
+    
     const afterLoad = () => setTimeout(hide, Math.max(0, 1000 - performance.now()));
     document.readyState === 'complete' ? afterLoad() : addEventListener('load', afterLoad, { once: true });
     setTimeout(hide, Math.max(0, 2000 - performance.now()));
   });
   preDone.then(() => heroTL && heroTL.play());
 
-  /* Disable menu transitions while the viewport crosses the breakpoint (no slide/flash on resize) */
+  
   let navT;
   const freezeNav = () => {
     document.documentElement.classList.add('no-nav-anim');
@@ -37,7 +37,7 @@
   addEventListener('orientationchange', freezeNav, { passive: true });
 
   gsap.registerPlugin(ScrollTrigger);
-  /* ---------- Section headings: word-by-word reveal ---------- */
+ 
   if (!reduced) {
     const hs = document.createElement('style');
     hs.textContent = '.hw{display:inline-block;overflow:hidden;vertical-align:top;padding:.14em .06em .16em;margin:-.14em -.06em -.16em}.hw-i{display:inline-block;will-change:transform}';
@@ -61,7 +61,7 @@
       walk(root);
       return words;
     };
-    /* Runs before AOS.init, so removing data-aos here replaces the old fade-up */
+
     document.querySelectorAll('h2, [data-split]').forEach(h => {
       const label = h.textContent.replace(/\s+/g, ' ').trim();
       if (!label) return;
@@ -285,10 +285,7 @@
         return;
       }
 
-      // if (note) {
-      //   note.textContent = 'Redirecting…';
-      //   note.style.color = 'var(--brass)';
-      // }
+      
 
       // Reset all form fields
       form.reset();

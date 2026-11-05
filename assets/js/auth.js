@@ -1,6 +1,6 @@
 (() => {
   'use strict';
-  /* ---------- AOS scroll reveals ---------- */
+
   const reducedMotion = matchMedia('(prefers-reduced-motion: reduce)').matches;
   if (window.AOS) AOS.init({ duration: 900, easing: 'ease-out-cubic', once: true, offset: 80, disable: reducedMotion });
 
@@ -8,7 +8,7 @@
   if (!f) return;
   const signup = f.dataset.mode === 'signup';
 
-  /* Validation only: nothing is stored or verified */
+
   const rules = {
     name: v => v.trim().length < 2 ? 'Enter your full name.' : '',
     email: v => /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(v.trim()) ? '' : 'Enter a valid email address.',
@@ -48,7 +48,7 @@
     const email = f.elements.email.value.trim(), role = f.elements.role.value;
     note.textContent = signup ? 'Account created. Taking you to sign in…' : 'Signed in. Opening your dashboard…';
     f.reset();
-    /* The email travels only in the URL so the dashboard header can show it */
+
     const to = signup ? 'login.html'
       : (role === 'admin' ? 'admin-dashboard.html' : 'customer-dashboard.html') + '?email=' + encodeURIComponent(email);
     setTimeout(() => { location.href = to; }, 1300);

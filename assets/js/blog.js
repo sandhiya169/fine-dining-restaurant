@@ -3,8 +3,8 @@
   const $ = (s, c = document) => c.querySelector(s);
   const $$ = (s, c = document) => [...c.querySelectorAll(s)];
   const reduced = matchMedia('(prefers-reduced-motion: reduce)').matches;
-  /* ---------- Preloader: visible 1–2 s, then fades out ---------- */
-  let heroTL; /* hero entrance timeline starts paused and plays once the preloader is gone */
+
+  let heroTL; 
   const preEl = $('#preloader');
   const preDone = new Promise(resolve => {
     if (!preEl) return resolve();
@@ -26,7 +26,7 @@
   });
   preDone.then(() => heroTL && heroTL.play());
 
-  /* Disable menu transitions while the viewport crosses the breakpoint (no slide/flash on resize) */
+
   let navT;
   const freezeNav = () => {
     document.documentElement.classList.add('no-nav-anim');
@@ -36,9 +36,7 @@
   addEventListener('resize', freezeNav, { passive: true });
   addEventListener('orientationchange', freezeNav, { passive: true });
 
-  /* Recipe marquee: seamless endless loop with no gap.
-     Clones the card list until the track is wider than 2x the screen, then animates
-     by exactly one list width (measured in px), so the jump back to 0 is invisible. */
+  
   (() => {
     const track = $('#recTrack');
     const original = track && track.querySelector('.rec-list');
@@ -62,7 +60,7 @@
     let rt; addEventListener('resize', () => { clearTimeout(rt); rt = setTimeout(build, 200); });
   })();
   gsap.registerPlugin(ScrollTrigger);
-  /* ---------- Section headings: word-by-word reveal ---------- */
+
   if (!reduced) {
     const hs = document.createElement('style');
     hs.textContent = '.hw{display:inline-block;overflow:hidden;vertical-align:top;padding:.14em .06em .16em;margin:-.14em -.06em -.16em}.hw-i{display:inline-block;will-change:transform}';
@@ -86,7 +84,7 @@
       walk(root);
       return words;
     };
-    /* Runs before AOS.init, so removing data-aos here replaces the old fade-up */
+
     document.querySelectorAll('h2, [data-split]').forEach(h => {
       const label = h.textContent.replace(/\s+/g, ' ').trim();
       if (!label) return;
@@ -99,14 +97,14 @@
     });
   }
 
-  /* Lenis smooth scroll synced with ScrollTrigger */
+  
   const lenis = new Lenis({ duration: 1.15, smoothWheel: !reduced });
   lenis.on('scroll', ScrollTrigger.update);
   gsap.ticker.add(t => lenis.raf(t * 1000));
   gsap.ticker.lagSmoothing(0);
   AOS.init({ duration: 900, easing: 'ease-out-cubic', once: true, offset: 80, disable: reduced });
 
-  /* Header: menu, active link, solid-on-scroll */
+  
   const nav = $('#nav'), burger = $('#burger'), menu = $('#menu');
   function closeMenu() { menu.classList.remove('open'); burger.setAttribute('aria-expanded', 'false'); lenis.start(); }
   const goTo = id => lenis.scrollTo(id, { offset: id === '#top' ? 0 : -90 });
@@ -126,11 +124,11 @@
     burger.setAttribute('aria-expanded', open);
     open ? lenis.stop() : lenis.start();
   });
-  /* Close menu when viewport widens past the mobile breakpoint */
+ 
   matchMedia('(min-width: 861px)').addEventListener('change', e => { if (e.matches) closeMenu(); });
   ScrollTrigger.create({ start: 80, onUpdate: s => nav.classList.toggle('solid', s.scroll() > 80) });
 
-  /* Journal: topic chips + search + show more */
+
   const items = $$('.post-li'), chips = $$('#chips button'), q = $('#q');
   const result = $('#result'), empty = $('#empty'), moreBtn = $('#moreBtn');
   const STEP = 3;
@@ -147,10 +145,10 @@
       empty.hidden = m.length > 0;
       moreBtn.parentElement.hidden = m.length <= limit;
       result.textContent = m.length ? `Showing ${shown.length} of ${m.length} stories` : '';
-      /* Posts are revealed by the filter animation, so mark their AOS fade as done (otherwise they stay at opacity 0) */
+      
       shown.forEach(li => { const a = $('.post', li); if (a) a.classList.add('aos-animate'); });
       if (animate && !reduced) gsap.fromTo(shown, { opacity: 0, y: 24 }, { opacity: 1, y: 0, duration: 0.6, stagger: 0.07, ease: 'power3.out', clearProps: 'opacity,transform', onComplete: relayout });
-      /* The journal height just changed: recalculate every section below (Lenis, ScrollTrigger, AOS) */
+    
       requestAnimationFrame(() => requestAnimationFrame(relayout));
     };
     const out = animate && !reduced ? items.filter(li => !li.hidden) : [];
@@ -166,13 +164,13 @@
   moreBtn.addEventListener('click', () => { limit += STEP; render(); });
   render(false);
 
-  /* Topic counts, and topic buttons jump to the filtered journal */
+
   $$('#topics button').forEach(b => {
     $('.cnt', b).textContent = items.filter(li => li.dataset.cat === b.dataset.cat).length;
     b.addEventListener('click', () => { q.value = ''; setCat(b.dataset.cat); goTo('#journal'); });
   });
 
-  /* Chef's note: split into words that light up as you scroll */
+
   const bq = $('#bigQ');
   if (!reduced) {
     const words = bq.textContent.trim().split(/(\s+)/);
@@ -183,7 +181,7 @@
   }
 
   if (!reduced) {
-    /* Hero: lines rise, the photo scales in, copy and fact bar follow */
+
     heroTL = gsap.timeline({ defaults: { ease: 'power4.out' }, paused: true })
       .from('.line span', { yPercent: 110, duration: 1.2, stagger: 0.14 })
       .from('.b-hero-bg', { scale: 1.25, duration: 1.8 }, 0.1)
@@ -191,14 +189,14 @@
       .from('.crumbs, .b-kicker, .lead, .hero-cta', { opacity: 0, y: 20, duration: 1, stagger: 0.12 }, 0.7)
       .from('.facts li', { opacity: 0, y: 20, duration: 0.9, stagger: 0.12 }, 1.1);
 
-    /* Hero photo drifts on scroll; featured photo parallax */
+  
     gsap.to('.b-hero-bg', { yPercent: 10, ease: 'none',
       scrollTrigger: { trigger: '.b-hero', start: 'top top', end: 'bottom top', scrub: true } });
     gsap.fromTo('.feat-img img', { yPercent: -6, scale: 1.12 }, { yPercent: 6, ease: 'none',
       scrollTrigger: { trigger: '.feat-img', start: 'top bottom', end: 'bottom top', scrub: true } });
   }
 
-  /* Newsletter (section + footer) */
+
   $('#nlForm').addEventListener('submit', e => {
     e.preventDefault();
     const em = $('#nlEmail'), note = $('#nlNote');

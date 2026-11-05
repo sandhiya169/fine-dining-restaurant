@@ -1,4 +1,5 @@
-/* Blog page – builds on style.css (tokens, header, footer, buttons) */
+/* Blog page  */
+
 .light{background:#f5f0e8;color:var(--ink)}
 .light p{color:rgba(14,38,34,.72)}
 .sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0)}
@@ -7,7 +8,7 @@ section[id]{scroll-margin-top:90px}
 .light .meta,.feat-card .meta{color:#7a5f2b}
 .price{font:500 1.4rem var(--serif);white-space:nowrap}
 
-/* Sub-header bar: full-width strip sitting directly below the fixed nav */
+
 .b-subheader {
   position: relative;
   z-index: 10;
@@ -29,7 +30,7 @@ section[id]{scroll-margin-top:90px}
   white-space: nowrap
 }
 
-/* 1 Hero: editorial split — copy left, arched photo + latest-story card right, fact bar below */
+/* 1 Hero */
 .b-hero {
   position: relative;
   isolation: isolate;
@@ -60,10 +61,10 @@ section[id]{scroll-margin-top:90px}
 }
 
 .b-kicker {
-  display: inline-flex;
+  display: flex;
   align-items: center;
   gap: .8rem;
-  margin: 0;
+  margin: 0 0 1rem;
   max-width: none;
   font-size: .74rem;
   font-weight: 500;
@@ -75,8 +76,17 @@ section[id]{scroll-margin-top:90px}
 .b-kicker::before {
   content: "";
   width: 38px;
+  flex-shrink: 0;
   height: 1px;
   background: var(--brass)
+}
+
+.light .b-kicker {
+  color: #7a5f2b
+}
+
+.light .b-kicker::before {
+  background: #7a5f2b
 }
 
 .crumbs {
@@ -109,7 +119,7 @@ section[id]{scroll-margin-top:90px}
   margin-top: 1.6rem
 }
 
-/* Right column: arched photo frame */
+/* Right column */
 .b-hero-visual {
   position: relative
 }
@@ -156,7 +166,6 @@ section[id]{scroll-margin-top:90px}
   object-fit: cover
 }
 
-/* Floating latest-story card */
 .b-hero-card {
   position: absolute;
   left: -13.75rem;
@@ -232,7 +241,6 @@ section[id]{scroll-margin-top:90px}
   color: var(--brass)
 }
 
-/* Fact bar: three cells split by hairlines */
 .facts {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
@@ -266,7 +274,6 @@ section[id]{scroll-margin-top:90px}
   }
 }
 
-/* 2 Featured: text panel overlaps the photo */
 .feat{padding-top:clamp(2rem,5vw,4rem);background:#f5f0e8}
 .feat-head{margin-bottom:2rem}
 .feat-head .b-kicker{margin-bottom:.6rem;color:#7a5f2b}
@@ -282,14 +289,12 @@ section[id]{scroll-margin-top:90px}
 .feat-card .btn{margin-top:1.6rem}
 .feat-card .btn:hover{background:var(--pearl);color:var(--ink)}
 
-/* 3 Journal: editorial filter tabs + card grid */
 .journal {
   background: var(--pine);
   color: var(--pearl);
   border-top: 1px solid rgba(194, 160, 97, .25);
 }
 
-/* Section header */
 .j-head {
   display: flex;
   align-items: flex-end;
@@ -315,7 +320,6 @@ section[id]{scroll-margin-top:90px}
   color: var(--brass)
 }
 
-/* Filter tabs */
 .j-filters { margin-block: 2rem 2.5rem }
 .j-tabs {
   display: flex;
@@ -353,7 +357,6 @@ section[id]{scroll-margin-top:90px}
 .j-tabs button[aria-pressed="true"] { color: var(--brass); font-weight: 500 }
 .j-tabs button[aria-pressed="true"]::after { transform: scaleX(1) }
 
-/* Posts grid */
 .filters { display: none }
 .search  { display: none }
 
@@ -447,7 +450,6 @@ section[id]{scroll-margin-top:90px}
   border-color: var(--pearl)
 }
 
-/* 4 Recipes: dark full-bleed section with infinite marquee */
 .recipes {
   background: var(--pine-2);
   padding-block: clamp(3rem, 7vw, 6rem) clamp(2.5rem, 5vw, 4rem);
@@ -466,22 +468,19 @@ section[id]{scroll-margin-top:90px}
 .rec-head-left .b-kicker { margin-bottom: .5rem }
 .rec-head-left h2 { margin: 0 }
 
-/* Marquee outer: clips overflow, edge fades */
 .rec-marquee-outer {
   position: relative;
   overflow: hidden;
-  /* fade edges */
   -webkit-mask-image: linear-gradient(to right, transparent 0%, black 6%, black 94%, transparent 100%);
   mask-image: linear-gradient(to right, transparent 0%, black 6%, black 94%, transparent 100%)
 }
 
-/* Track: flex row containing two identical lists side by side */
 .rec-track {
   display: flex;
   width: max-content;
   animation: rec-scroll 22s linear infinite
 }
-/* Pause on hover */
+
 .rec-track:hover { animation-play-state: paused }
 
 @keyframes rec-scroll {
@@ -489,14 +488,12 @@ section[id]{scroll-margin-top:90px}
   100% { transform: translateX(-50%) }
 }
 
-/* Each list is a flex row of cards */
 .rec-list {
   display: flex;
   gap: 1.2rem;
   padding-inline: .6rem
 }
 
-/* Recipe cards */
 .rcard {
   flex: none;
   width: clamp(240px, 24vw, 300px);
@@ -511,7 +508,6 @@ section[id]{scroll-margin-top:90px}
 .rcard figure img { width: 100%; height: 100%; object-fit: cover; transition: transform .8s ease }
 .rcard:hover figure img { transform: scale(1.07) }
 
-/* Text overlay pinned to bottom */
 .r-body {
   position: absolute;
   inset: auto 0 0;
@@ -546,14 +542,13 @@ section[id]{scroll-margin-top:90px}
 .r-cta i { font-size: .62rem; transition: transform .3s }
 .rcard:hover .r-cta i { transform: translateX(4px) }
 
-/* Reduced motion: no animation, no hover transforms */
+
 @media (prefers-reduced-motion: reduce) {
   .rec-track { animation: none }
   .r-body { transform: none }
   .r-cta { opacity: 1; transform: none }
 }
 
-/* Responsive card sizing */
 @media (max-width: 860px) {
   .rcard { width: clamp(200px, 52vw, 260px) }
 }
@@ -563,7 +558,6 @@ section[id]{scroll-margin-top:90px}
   .r-cta { opacity: 1; transform: none }
 }
 
-/* 5 Chef's note: full-bleed editorial quote with image overlay */
 .note-q {
   position: relative;
   isolation: isolate;
@@ -571,7 +565,6 @@ section[id]{scroll-margin-top:90px}
   padding-block: clamp(5rem, 12vw, 10rem)
 }
 
-/* Background image */
 .note-bg {
   position: absolute;
   inset: 0;
@@ -597,7 +590,6 @@ section[id]{scroll-margin-top:90px}
   max-width: 1100px
 }
 
-/* Large decorative brass rule on the left */
 .note-deco {
   width: 3px;
   height: 100%;
@@ -717,7 +709,6 @@ section[id]{scroll-margin-top:90px}
   overflow: hidden;
 }
 
-/* Atmospheric ambient glow */
 .nl::before {
   content: "";
   position: absolute;
@@ -736,7 +727,6 @@ section[id]{scroll-margin-top:90px}
   z-index: 1;
 }
 
-/* Refined editorial newsletter card */
 .nl-card {
   max-width: 840px;
   margin-inline: auto;
@@ -797,7 +787,6 @@ section[id]{scroll-margin-top:90px}
   margin-bottom: 2rem;
 }
 
-/* Integrated pill form */
 .nl-form {
   max-width: 520px;
   margin: 0 auto;
@@ -1020,5 +1009,4 @@ section[id]{scroll-margin-top:90px}
   .mr li{grid-template-columns:2.6rem 1fr}
 }
 
-/* Honour the hidden attribute on elements that set their own display */
 .post-li[hidden],.empty[hidden],.more-wrap[hidden]{display:none}

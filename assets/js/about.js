@@ -3,8 +3,8 @@
   const $ = (s, c = document) => c.querySelector(s);
   const $$ = (s, c = document) => [...c.querySelectorAll(s)];
   const reduced = matchMedia('(prefers-reduced-motion: reduce)').matches;
-  /* ---------- Preloader: visible 1–2 s, then fades out ---------- */
-  let heroTL; /* hero entrance timeline starts paused and plays once the preloader is gone */
+
+  let heroTL; 
   const preEl = $('#preloader');
   const preDone = new Promise(resolve => {
     if (!preEl) return resolve();
@@ -19,14 +19,14 @@
       setTimeout(() => preEl.remove(), 1000);
       setTimeout(resolve, 350);
     };
-    /* performance.now() counts from navigation start: never shorter than 1 s, never longer than 2 s */
+    
     const afterLoad = () => setTimeout(hide, Math.max(0, 1000 - performance.now()));
     document.readyState === 'complete' ? afterLoad() : addEventListener('load', afterLoad, { once: true });
     setTimeout(hide, Math.max(0, 2000 - performance.now()));
   });
   preDone.then(() => heroTL && heroTL.play());
 
-  /* Disable menu transitions while the viewport crosses the breakpoint (no slide/flash on resize) */
+  
   let navT;
   const freezeNav = () => {
     document.documentElement.classList.add('no-nav-anim');
@@ -36,7 +36,7 @@
   addEventListener('resize', freezeNav, { passive: true });
   addEventListener('orientationchange', freezeNav, { passive: true });
   gsap.registerPlugin(ScrollTrigger);
-  /* ---------- Section headings: word-by-word reveal ---------- */
+
   if (!reduced) {
     const hs = document.createElement('style');
     hs.textContent = '.hw{display:inline-block;overflow:hidden;vertical-align:top;padding:.14em .06em .16em;margin:-.14em -.06em -.16em}.hw-i{display:inline-block;will-change:transform}';
@@ -73,7 +73,7 @@
     });
   }
 
-  /* Lenis smooth scroll synced with ScrollTrigger */
+
   const lenis = new Lenis({ duration: 1.15, smoothWheel: !reduced });
   lenis.on('scroll', ScrollTrigger.update);
   gsap.ticker.add(t => lenis.raf(t * 1000));
@@ -84,7 +84,7 @@
     AOS.refresh();
   });
 
-  /* Header: menu, active link, solid-on-scroll */
+
   const nav = $('#nav'), burger = $('#burger'), menu = $('#menu');
   function closeMenu() { menu.classList.remove('open'); burger.setAttribute('aria-expanded', 'false'); lenis.start(); }
   $$('a[href^="#"]').forEach(a => a.addEventListener('click', e => {
@@ -103,11 +103,11 @@
     burger.setAttribute('aria-expanded', open);
     open ? lenis.stop() : lenis.start();
   });
-  /* Close menu when viewport widens past the mobile breakpoint */
+ 
   matchMedia('(min-width: 861px)').addEventListener('change', e => { if (e.matches) closeMenu(); });
   ScrollTrigger.create({ start: 80, onUpdate: s => nav.classList.toggle('solid', s.scroll() > 80) });
 
-  /* Timeline items light up as the drawn line reaches them */
+
   const items = $$('.tl-item');
   if (reduced) {
     gsap.set('.tl-line i', { scaleY: 1 });
@@ -124,7 +124,7 @@
   }
 
   if (!reduced) {
-    /* Hero entrance: one orchestrated moment */
+
     heroTL = gsap.timeline({ defaults: { ease: 'power4.out' }, paused: true })
       .from('.line span', { yPercent: 110, duration: 1.3, stagger: 0.14 })
       .from('#duoBig', { clipPath: 'inset(100% 0 0 0)', duration: 1.5, ease: 'power3.inOut' }, 0.1)
@@ -132,13 +132,13 @@
       .from('.duo .round', { scale: 0, duration: 1, ease: 'back.out(1.6)' }, 1)
       .from('.crumbs, .lead, .hero-cta, .hero-facts, .a-rail', { opacity: 0, y: 20, duration: 1, stagger: 0.1 }, 0.8);
 
-    /* Seal spins with scroll; hero image drifts */
+  
     gsap.to('#seal', { rotation: 360, ease: 'none', transformOrigin: '50% 50%',
       scrollTrigger: { trigger: 'body', start: 'top top', end: 'bottom bottom', scrub: 0.5 } });
     gsap.to('#duoBig img', { yPercent: 10, ease: 'none',
       scrollTrigger: { trigger: '.a-hero', start: 'top top', end: 'bottom top', scrub: true } });
 
-    /* Timeline photos: the frame stays, the picture opens inside it and drifts as you scroll */
+    
     $$('.tl-img').forEach(f => {
       const img = $('img', f);
       gsap.from(img, { clipPath: 'inset(100% 0 0 0)', duration: 1.3, ease: 'power3.inOut', clearProps: 'clipPath',
@@ -147,11 +147,11 @@
         scrollTrigger: { trigger: f, start: 'top bottom', end: 'bottom top', scrub: true } });
     });
 
-    /* Distance bars grow from the kitchen outward */
+    
     gsap.from('.gbar i', { scaleX: 0, transformOrigin: 'left', duration: 1.4, stagger: 0.12, ease: 'power3.out',
       scrollTrigger: { trigger: '#growers', start: 'top 80%', once: true } });
 
-    /* Room photos open like curtains, then drift inside their frames */
+    
     $$('.room-grid figure').forEach(f => {
       gsap.from(f, { clipPath: 'inset(100% 0 0 0)', duration: 1.3, ease: 'power3.inOut',
         scrollTrigger: { trigger: f, start: 'top 85%', once: true } });

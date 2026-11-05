@@ -1,4 +1,4 @@
-/* Menu page – builds on style.css (tokens, header, footer, buttons) */
+/* Menu page */
 .light {
   background: var(--pearl);
   color: var(--ink)
@@ -20,7 +20,6 @@ section[id] {
   scroll-margin-top: 150px
 }
 
-/* Sub-header bar: full-width strip sitting directly below the fixed nav */
 .m-subheader {
   position: relative;
   z-index: 10;
@@ -42,7 +41,6 @@ section[id] {
   white-space: nowrap
 }
 
-/* 1 Hero: editorial split — copy left, arched photo + menu card right, fact bar below */
 .m-hero {
   position: relative;
   isolation: isolate;
@@ -72,10 +70,10 @@ section[id] {
 }
 
 .m-kicker {
-  display: inline-flex;
+  display: flex;
   align-items: center;
   gap: .8rem;
-  margin: 0;
+  margin: 0 0 1rem;
   max-width: none;
   font-size: .74rem;
   font-weight: 500;
@@ -87,8 +85,17 @@ section[id] {
 .m-kicker::before {
   content: "";
   width: 38px;
+  flex-shrink: 0;
   height: 1px;
   background: var(--brass)
+}
+
+.light .m-kicker {
+  color: #7a5f2b
+}
+
+.light .m-kicker::before {
+  background: #7a5f2b
 }
 
 .crumbs {
@@ -121,7 +128,6 @@ section[id] {
   margin-top: 1.6rem
 }
 
-/* Right column: arched photo frame */
 .m-hero-visual {
   position: relative
 }
@@ -168,7 +174,6 @@ section[id] {
   object-fit: cover
 }
 
-/* Floating menu card */
 .paper {
   position: absolute;
   left: -9rem;
@@ -251,7 +256,6 @@ section[id] {
   color: var(--brass)
 }
 
-/* Sticky section nav + diet highlight */
 .menu-bar {
   position: sticky;
   top: var(--navh, 64px);
@@ -343,7 +347,6 @@ section[id] {
   scrollbar-width: none
 }
 
-/* Shared dish pieces */
 .dish {
   transition: opacity .4s
 }
@@ -400,7 +403,6 @@ section[id] {
   display: none
 }
 
-/* 2 Tasting: sticky intro, courses listed in sequence */
 .tasting-sec {
   background: var(--pine-2)
 }
@@ -454,7 +456,6 @@ section[id] {
   margin-bottom: .2rem
 }
 
-/* Tasting menu enhancements: progress thread, active course, live counter */
 .courses-list {
   --th: 2.2rem;
   --prog: 0;
@@ -818,7 +819,6 @@ section[id] {
   letter-spacing: 0.04em;
 }
 
-/* Hover: faint gold wash on body side */
 .euro-row::after {
   content: "";
   position: absolute;
@@ -837,12 +837,10 @@ section[id] {
   opacity: 1;
 }
 
-/* keep .cards .plates li display intact for desserts */
 .plates li {
   display: flex;
 }
 
-/* 5 Desserts: round plates */
 .sweet {
   background: var(--pine-2)
 }
@@ -883,7 +881,6 @@ section[id] {
   color: var(--brass)
 }
 
-/* 6 Drinks: pairing tiers + glass list */
 .drinks-head {
   display: grid;
   grid-template-columns: 1.2fr .8fr;
@@ -952,7 +949,6 @@ section[id] {
   margin-top: 1rem
 }
 
-/* 7 Good to know: accordion */
 .notes .grid-2 {
   grid-template-columns: 5fr 7fr;
   gap: clamp(2rem, 6vw, 5rem);
@@ -1041,7 +1037,6 @@ section[id] {
   transform: translateX(3px);
 }
 
-/* Left column follows the scroll while the accordion opens and closes */
 .n-side {
   position: sticky;
   top: calc(var(--navh, 64px) + var(--barh, 60px) + 3rem)
@@ -1118,7 +1113,6 @@ section[id] {
   transition: grid-template-rows .35s ease, visibility 0s;
 }
 
-/* padding lives only on the open state; otherwise it stops a closed answer from collapsing fully */
 .faq-a p {
   overflow: hidden;
   min-height: 0;
@@ -1132,7 +1126,6 @@ section[id] {
   padding-bottom: 1.4rem;
 }
 
-/* 8 Closing call */
 .m-cta {
   position: relative;
   isolation: isolate;
@@ -1143,7 +1136,6 @@ section[id] {
   text-align: center
 }
 
-/* thin inset frame, echoing the menu card in the hero */
 .m-cta::before {
   content: "";
   position: absolute;
@@ -1158,6 +1150,15 @@ section[id] {
   margin-inline: auto;
   color: var(--ink);
   font-size: clamp(2.6rem, 8vw, 7rem)
+}
+
+.m-cta .m-kicker {
+  margin-inline: auto;
+  justify-content: center
+}
+
+.m-cta .light .m-kicker {
+  color: #7a5f2b
 }
 
 .m-cta h2 em {
@@ -1352,15 +1353,10 @@ section[id] {
     grid-template-columns: 1fr;
   }
 
-
-
-
   .n-side {
     position: static
   }
 
-
-  /* Euro: stack image above text */
   .euro-row,
   .euro-row--rev {
     grid-template-columns: 1fr;
@@ -1426,8 +1422,6 @@ section[id] {
   }
 
 
-
-
   .course::before {
     top: calc(2.4rem - 5px);
     width: 10px;
@@ -1443,7 +1437,6 @@ section[id] {
     font-size: 1.8rem
   }
 
-  /* Euro small */
   .euro-row {
     grid-template-rows: 240px auto;
   }

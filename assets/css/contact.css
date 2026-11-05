@@ -1,4 +1,4 @@
-/* Contact page – builds on style.css (tokens, header, footer, buttons) */
+/* Contact page */
 .top {
   align-items: start
 }
@@ -24,7 +24,6 @@
   line-height: 1
 }
 
-/* Sub-header bar: full-width strip sitting directly below the fixed nav */
 .c-subheader {
   position: relative;
   z-index: 10;
@@ -53,8 +52,6 @@
   flex: none
 }
 
-/* Hero top padding now only needs to clear its own content, not the nav */
-/* 1 Hero: editorial split — copy left, arched photo + floating status card right, fact bar below */
 .c-hero {
   position: relative;
   isolation: isolate;
@@ -83,7 +80,6 @@
   max-width: 720px
 }
 
-/* Eyebrow row: breadcrumb pill + label, wraps on narrow screens */
 .c-eyebrow {
   display: flex;
   flex-wrap: wrap;
@@ -93,11 +89,11 @@
 }
 
 .c-kicker {
-  display: inline-flex;
+  display: flex;
   align-items: center;
   gap: .8rem;
-  margin: 0;
-  max-width: none;
+  margin: 0 0 1rem;
+  max-width: fit-content;
   font-size: .74rem;
   font-weight: 500;
   letter-spacing: .24em;
@@ -108,8 +104,17 @@
 .c-kicker::before {
   content: "";
   width: 38px;
+  flex-shrink: 0;
   height: 1px;
   background: var(--brass)
+}
+
+.light .c-kicker {
+  color: #7a5f2b
+}
+
+.light .c-kicker::before {
+  background: #7a5f2b
 }
 
 .crumbs {
@@ -142,7 +147,6 @@
   margin-top: 1.6rem;
 }
 
-/* Right column: arched photo frame */
 .c-hero-visual {
   position: relative
 }
@@ -189,7 +193,6 @@
   object-fit: cover
 }
 
-/* Floating status card */
 .c-hero-card {
   position: absolute;
   left: -13.75rem;
@@ -271,7 +274,6 @@
   color: var(--brass)
 }
 
-/* Fact bar: three cells split by hairlines */
 .facts {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
@@ -299,7 +301,6 @@
   color: var(--brass)
 }
 
-/* 2 Contact strip: four columns divided by hairlines */
 .c-cards {
   background: var(--pearl);
   color: var(--ink);
@@ -308,6 +309,11 @@
 
 .qc-head {
   text-align: center
+}
+
+.qc-head .c-kicker {
+  justify-content: center;
+  margin-inline: auto
 }
 
 .qc-head p {
@@ -374,7 +380,6 @@
   border-color: var(--ink)
 }
 
-/* 3 Form: brass panel + dark form, one bordered block */
 .c-form .split {
   display: grid;
   grid-template-columns: 5fr 7fr;
@@ -389,6 +394,15 @@
 
 .side h2 {
   color: var(--ink)
+}
+
+.side .c-kicker {
+  color: var(--ink);
+  opacity: .7
+}
+
+.side .c-kicker::before {
+  background: var(--ink)
 }
 
 .side-in {
@@ -526,7 +540,6 @@ form .row>label select {
   min-width: 0
 }
 
-/* 3b Form enhancements: states, validation, stepper, time slots, success */
 .split form {
   display: block;
   color-scheme: dark
@@ -626,7 +639,6 @@ form .row>label select {
   color: #f2a99b
 }
 
-/* Chips: hover, disabled (past slots), grouped lists */
 .chip:hover input:not(:checked):not(:disabled)+span {
   border-color: var(--brass)
 }
@@ -659,7 +671,6 @@ form .row>label select {
   padding: .4rem .9rem
 }
 
-/* Guests stepper */
 .stepper {
   display: flex;
   align-items: center;
@@ -729,7 +740,6 @@ form .row>label select {
   cursor: not-allowed
 }
 
-/* Large-party nudge */
 .nudge {
   display: flex;
   gap: .9rem;
@@ -757,7 +767,6 @@ form .row>label select {
   cursor: pointer
 }
 
-/* Submit, privacy line, honeypot */
 .submit {
   display: inline-flex;
   align-items: center;
@@ -818,7 +827,6 @@ form .row>label select {
   overflow: hidden
 }
 
-/* Success state */
 .sent {
   display: grid;
   gap: 1.2rem;
@@ -904,7 +912,6 @@ form .row>label select {
   }
 }
 
-/* 4 Map: full-bleed map with floating card */
 .c-map {
   position: relative;
   min-height: 760px;
@@ -973,7 +980,6 @@ form .row>label select {
   color: rgba(14, 38, 34, .72)
 }
 
-/* 5 Hours: week of tiles, today in brass */
 .c-hours {
   background: var(--pine-2)
 }
@@ -1045,7 +1051,6 @@ form .row>label select {
   font-size: .92rem
 }
 
-/* 6 Banner: photo with framed panel on the right */
 .banner {
   position: relative;
   overflow: hidden;
@@ -1085,7 +1090,6 @@ form .row>label select {
   margin: 0 0 2rem
 }
 
-/* 7 FAQ: separate blocks that invert when open */
 .c-faq .grid-2 {
   grid-template-columns: 3fr 5fr;
   align-items: start
@@ -1151,7 +1155,8 @@ form .row>label select {
 .faq-a {
   display: grid;
   grid-template-rows: 0fr;
-  transition: grid-template-rows .35s ease;
+  visibility: hidden;
+  transition: grid-template-rows .35s ease, visibility 0s linear .35s;
   overflow: hidden
 }
 
@@ -1159,15 +1164,24 @@ form .row>label select {
 .faq-item.is-open .faq-a,
 .faq-item:has(.faq-q[aria-expanded=true]) .faq-a {
   grid-template-rows: 1fr;
+  visibility: visible;
+  transition: grid-template-rows .35s ease, visibility 0s;
 }
 
 .faq-a p {
   overflow: hidden;
   min-height: 0;
-  padding: 0 1.4rem 1.4rem
+  margin: 0;
+  padding: 0 1.4rem;
+  transition: padding-bottom .35s ease;
 }
 
-/* 8 Closing call */
+.faq-q[aria-expanded=true] + .faq-a p,
+.faq-item.is-open .faq-a p,
+.faq-item:has(.faq-q[aria-expanded=true]) .faq-a p {
+  padding-bottom: 1.4rem;
+}
+
 .c-cta {
   text-align: center;
   position: relative;
@@ -1315,7 +1329,7 @@ form .row>label select {
 
 @media (max-width:860px) {
   .c-subheader {
-    margin-top: 68px; /* mobile nav: no topbar, just the bar */
+    margin-top: 68px;
     flex-wrap: wrap;
     gap: .7rem 1rem;
     justify-content: center;
@@ -1411,7 +1425,6 @@ form .row>label select {
     gap: 1.8rem
   }
 
-  /* FAQ: force single column, centred heading */
   .c-faq .grid-2 {
     grid-template-columns: 1fr
   }

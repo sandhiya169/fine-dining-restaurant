@@ -1,4 +1,4 @@
-/* ===== Dashboards — builds on style.css tokens ===== */
+/* ===== Dashboards  ===== */
 .dash {
   display: grid;
   grid-template-columns: 260px minmax(0, 1fr);
@@ -163,7 +163,6 @@
   padding: clamp(1rem, 3vw, 2rem)
 }
 
-/* view panel wrapper — fills the full grid row and re-establishes the same grid */
 .view-panel {
   display: contents
 }
@@ -434,7 +433,6 @@
   --cols: 4
 }
 
-/* each figure spans an image row + a caption row, so images and buttons line up across the row */
 .imgs figure {
   display: grid;
   grid-row: span 2;
@@ -466,7 +464,6 @@
   margin-top: auto
 }
 
-/* narrower cards: 4 images become 2x2, 3 images become 2 + 1 full-width, so no cell is ever left empty */
 @container (max-width:560px) {
   .imgs.n4 {
     --cols: 2
@@ -715,7 +712,6 @@ td em.wait {
   margin-top: .15rem
 }
 
-/* sidebar user — hidden on desktop, shown on mobile */
 .user-side {
   display: none;
   gap: .7rem;
@@ -782,12 +778,10 @@ td em.wait {
     gap: .7rem
   }
 
-  /* hide email pill from header on small screens — it lives in the sidebar */
   .top .user {
     display: none
   }
 
-  /* show the sidebar copy */
   .user-side {
     display: flex
   }
