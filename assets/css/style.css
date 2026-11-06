@@ -2081,16 +2081,20 @@ label.bad select {
   height: 40px;
   border: 1px solid rgba(194, 160, 97, .5);
   border-radius: 50%;
-  transition: .3s
+  color: var(--pearl);
+  transition: background .3s, border-color .3s, color .3s
 }
 
 .social a i {
-  font-size: 1.05rem
+  font-size: 1.05rem;
+  color: inherit
 }
 
-.social a:hover {
+.social a:hover,
+.footer .social a:hover {
   background: var(--brass);
-  color: var(--ink)
+  border-color: var(--brass);
+  color: #fff
 }
 
 /* Footer newsletter */
